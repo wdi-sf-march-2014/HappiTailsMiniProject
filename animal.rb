@@ -5,6 +5,8 @@ class Animal
   # attr_accessor sets up both for you
   attr_accessor :name, :age, :gender, :species, :toys
 
+#this is an edit
+
   # Used when creating a new animal.
   #   Example:
   #       Animal.new('Timmy', 4, 'male', 'toad')
