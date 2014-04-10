@@ -23,10 +23,9 @@ class Shelter
 
   	def adopt
   		#takes an animal object from a client and adds it to the shelter
-  		
-
   	end
 
 end
 
 shelter = Shelter.new('HappiTails', '10 east 21st Street')
+#$shelter.animals['Lassy'].toys << 'Frisbee'
