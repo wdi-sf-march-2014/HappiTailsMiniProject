@@ -13,9 +13,4 @@ class Animal
     "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
   end
 
-  def pets
-    @name.to_sym
-  end
-
-
 end
