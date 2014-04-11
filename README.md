@@ -43,7 +43,7 @@ shelter by storing and manipulating information about clients and animals.
 
 ###Specification:
 #####Objects:
-- Animal:
+<!-- - Animal:
 	- An animal should have a name.
 	- An animal should have an age.
 	- An animal should have a gender.
@@ -60,13 +60,13 @@ shelter by storing and manipulating information about clients and animals.
 - Shelter:
 	- The shelter should display all the clients.
 	- The shelter should display all the animals.
-	- The shelter should display all the animals.
+	- The shelter should display all the animals. -->
 
 - Relationships:
 	- A client should be able to adopt an animal.
 	- A client should be able to put an animal up for adoption
 
-#####Phase 1
+<!-- #####Phase 1
 - Create your Animal and Cient classes **(one at a time)**
   - Your specs will tell you what methods are expected in each class
   - Make sure you make all the specs pass for a single class before moving on to the next one
@@ -74,7 +74,7 @@ shelter by storing and manipulating information about clients and animals.
 #####Phase 2
 - Create your Shelter Class
   - Ensure that new animals and clients can be added to the shelter
-  - Make sure your specs for shelter pass before moving on
+  - Make sure your specs for shelter pass before moving on -->
 
 #####Phase 3
 - Create a basic menu
