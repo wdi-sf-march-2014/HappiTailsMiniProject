@@ -1,5 +1,4 @@
 class Client < Animal
-
   attr_accessor :name, :age, :gender, :number_of_children, :pets
 
   def initialize(name, age, gender, number_of_children)   
@@ -20,8 +19,5 @@ class Client < Animal
       pets += (value.to_s + "\n")
     end
     return pets.chomp()
-    # "#{value.name} is a #{value.age} year old #{value.gender} #{value.species} that loves "
-    # "Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves "
    end
 end
-
