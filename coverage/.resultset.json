@@ -1,0 +1,55 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/petervarga/Google Drive/General Assembly/WDI/ruby_excercises/Day 4/HappiTailsMiniProject/animal.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/petervarga/Google Drive/General Assembly/WDI/ruby_excercises/Day 4/HappiTailsMiniProject/shelter.rb": [
+
+      ],
+      "/Users/petervarga/Google Drive/General Assembly/WDI/ruby_excercises/Day 4/HappiTailsMiniProject/client.rb": [
+
+      ]
+    },
+    "timestamp": 1397175714
+  }
+}
