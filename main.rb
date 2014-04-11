@@ -1,3 +1,6 @@
+#main is used for user input only
+
+
 require 'pry'
 require 'rainbow'
 require_relative 'data'
