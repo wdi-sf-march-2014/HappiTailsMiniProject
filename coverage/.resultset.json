@@ -32,7 +32,7 @@
         null,
         null,
         1,
-        1,
+        0,
         null,
         null,
         null,
@@ -47,9 +47,36 @@
 
       ],
       "/Users/petervarga/Google Drive/General Assembly/WDI/ruby_excercises/Day 4/HappiTailsMiniProject/client.rb": [
-
+        1,
+        null,
+        1,
+        null,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1397175714
+    "timestamp": 1397225924
   }
 }
