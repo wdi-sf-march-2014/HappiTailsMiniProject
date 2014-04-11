@@ -1,17 +1,18 @@
 class Client 
 
-  attr_accessor :name, :age, :gender, :num_children, :pets
+  attr_accessor :name, :age, :gender, :num_children, :num_pets, :pets
 
-  def initialize(name, age, gender, num_children)
+  def initialize(name, age, gender, num_children, num_pets)
     @name = name
     @age = age
     @gender = gender
     @num_children = num_children
+    @num_pets = num_pets
     @pets = {}
   end
 
   def to_s
-    "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@pets.length} pets"  
+    "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@num_pets} pets"  
   end
 
   def display_pets

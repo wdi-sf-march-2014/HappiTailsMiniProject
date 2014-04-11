@@ -13,7 +13,6 @@ class Shelter
   		"#{@name} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} people"
   	end
 
-
    	def display_animals
   		animals = ""
   		@animals.each do |k,v|
@@ -23,24 +22,11 @@ class Shelter
   	end
   
   	def display_clients
-  		
   		clients = ""
-
   		@clients.each do |k,v|
   			clients += (v.to_s + "\n")
   		end
-
   		return clients.chomp
-
   	end
-  	#FIX THIS
-  	def adopt()
-
-  		#takes an animal object from a client and adds it to the shelter
-  		# for pet in client
-  		# 	@animals client.pets 
-  	end
-
-  	def return()
-  	end
+    
 end

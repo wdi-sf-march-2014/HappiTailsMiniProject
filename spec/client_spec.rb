@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Client do
 
   before :each do
-    @client = Client.new('Beth', 30, 'female', 3)
+    @client = Client.new('Beth', 30, 'female', 3, 0)
   end
 
   describe "#new" do
