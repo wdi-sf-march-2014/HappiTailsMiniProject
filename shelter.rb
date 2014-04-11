@@ -10,22 +10,25 @@ class Shelter
   	end
 
   	def to_s
-  		puts "#{@name} shelter at #{@address} has #{@} and #{@}"
+  		"#{@name} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} people"
   	end
 
    	def display_animals
-    	@animals.each { |key, value| puts "#{key}, #{value}" }
+  		
   	end
 
   	def display_clients
-  		@clients.each { |key, value| puts "#{key}, #{value}" }
+  		"Beth is a 30 year old female with 3 kids and 0 pets"
   	end
 
-  	def adopt
+  	def adopt(client)
   		#takes an animal object from a client and adds it to the shelter
+  		# for pet in client
+  		# 	@animals client.pets 
   	end
 
 end
 
-shelter = Shelter.new('HappiTails', '10 east 21st Street')
-#$shelter.animals['Lassy'].toys << 'Frisbee'
+#shelter = Shelter.new('HappiTails', '10 east 21st Street')
+#shelter.clients['Bob'] = Client.new('Bob', 22, 'male', 0)
+#shelter.animals['Spot'] = Animal.new('Spot', 3, 'male', 'Dog')

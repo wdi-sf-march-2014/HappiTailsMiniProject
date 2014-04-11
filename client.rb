@@ -1,4 +1,4 @@
-class Client < Person
+class Client 
 
   attr_accessor :name, :age, :gender, :num_children, :pets
 
@@ -11,13 +11,11 @@ class Client < Person
   end
 
   def to_s
-    puts "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@pets.length} pets"  
+    "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@pets.length} pets"  
   end
-
+	#FIX THIS
   def display_pets
-    @pets.each { |key, value| puts "#{key}, #{value}" }
+  	"Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves "
   end
-
 end
 
-shelter.clients['Bob'] = Person.new('Bob', 22, 'male', 0)

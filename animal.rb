@@ -11,10 +11,11 @@ class Animal
   end
 
   def to_s
-      puts "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys}"   #still need to print what's in the array toys
+      "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"  #still need to print what's in the array toys
   end
 
 end
 
-shelter.animals['Sport'] = Animal.new('Sport', 1, 'male', 'Dog')
-shelter.animals['Sport'].toys << 'Treats'
+# animal = Animal.new("Tiny", 3, "male", "cat")
+# animal.toys = ["mice", "string"]
+# animal.to_s
