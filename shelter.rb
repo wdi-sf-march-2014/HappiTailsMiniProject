@@ -13,22 +13,34 @@ class Shelter
   		"#{@name} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} people"
   	end
 
+
    	def display_animals
-  		
+  		animals = ""
+  		@animals.each do |k,v|
+  			animals += (v.to_s + "\n")
+  		end
+  		return animals.chomp
   	end
-
+  
   	def display_clients
-  		"Beth is a 30 year old female with 3 kids and 0 pets"
-  	end
+  		
+  		clients = ""
 
-  	def adopt(client)
+  		@clients.each do |k,v|
+  			clients += (v.to_s + "\n")
+  		end
+
+  		return clients.chomp
+
+  	end
+  	#FIX THIS
+  	def adopt()
+
   		#takes an animal object from a client and adds it to the shelter
   		# for pet in client
   		# 	@animals client.pets 
   	end
 
+  	def return()
+  	end
 end
-
-#shelter = Shelter.new('HappiTails', '10 east 21st Street')
-#shelter.clients['Bob'] = Client.new('Bob', 22, 'male', 0)
-#shelter.animals['Spot'] = Animal.new('Spot', 3, 'male', 'Dog')

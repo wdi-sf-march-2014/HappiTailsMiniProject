@@ -11,11 +11,7 @@ class Animal
   end
 
   def to_s
-      "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"  #still need to print what's in the array toys
+      "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
   end
 
 end
-
-# animal = Animal.new("Tiny", 3, "male", "cat")
-# animal.toys = ["mice", "string"]
-# animal.to_s

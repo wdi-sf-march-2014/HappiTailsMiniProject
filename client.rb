@@ -13,9 +13,14 @@ class Client
   def to_s
     "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@pets.length} pets"  
   end
-	#FIX THIS
+
   def display_pets
-  	"Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves "
+  	pets = ""
+  	@pets.each do |k,v|
+  		pets += (v.to_s + "\n")
+  	end
+  	return pets.chomp
   end
+  
 end
 
