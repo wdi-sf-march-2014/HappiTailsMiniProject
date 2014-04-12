@@ -1,3 +1,4 @@
+require_relative 'client'
 
 class Shelter
 	attr_accessor :shelter_name, :address, :clients, :animals
@@ -25,24 +26,31 @@ class Shelter
 		client_info.join("\n")
 	end
 
+	def new_client(client_name, client_age, client_gender, num_children)
+		new_client = Client.new(client_name, client_age, client_gender, num_children)
+		@clients[client_name] = new_client
+	end
+
 	def intake(animal_name, animal_age, animal_gender, species)
 		new_animal = Animal.new(animal_name, animal_age, animal_gender, species)
-		@animals[animal_name.to_sym] = new_animal
+		@animals[animal_name] = new_animal
 	end
 
 	def adopt(client_name, animal_name)
-		@clients[client_name.to_sym].pets[animal_name.to_sym] = @animals[animal_name.to_sym]
-		@animals.delete(animal_name.to_sym)
+		@clients[client_name].pets[animal_name] = @animals[animal_name]
+		@animals.delete(animal_name)
+	end
+
+	def return(client_name, animal_name)
+		@animals[animal_name] = @clients[client_name].pets[animal_name]
+		@clients[client_name].pets.delete(animal_name)
 	end
 
 end
 
 # new_shelter = Shelter.new(shelter_name,address)
 
-	# def new_client(client_name, client_age, client_gender, num_children)
-	# 	new_client = Client.new(client_name, client_age, client_gender, num_children)
-	# 	@clients[client_name.to_sym] = new_client
-	# end
+	
 
 # shelter = Shelter.new('HappiTails', '10 East 21st Street')
 
