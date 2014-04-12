@@ -1,6 +1,6 @@
 require 'pry'
 #require 'rainbow'
-#require_relative 'data'
+require_relative 'data'
 
 puts "Select an option:"
 
@@ -16,10 +16,12 @@ while input != "5"
 
 	case input
 		when "1"
-			puts "Display animals"
-		
+			$shelter.display_animals
+			puts $shelter.address
+			# puts "Display animals"
 		when "2"
 			puts "Display clients"
+			puts $shelter.display_clients
 		
 		when "3"
 			puts "Create animals"

@@ -1,9 +1,9 @@
 class Shelter
 
-	attr_accessor :name, :address, :clients, :animals
+	attr_accessor :shelter, :address, :clients, :animals
 
-	def initialize (name, address)
-		@name = name
+	def initialize (shelter, address)
+		@shelter = shelter
 		@address = address
 		@clients = {}
 		@animals = {}
@@ -11,12 +11,12 @@ class Shelter
 
 	
 	def to_s
-		"#{@name} shelter at #{@address} has #{@animals.count} animals and #{@clients.count} people"
+		"#{@shelter} shelter at #{@address} has #{@animals.count} animals and #{@clients.count} people"
 	end
 
 	
 	def display_animals
-		"#{@animals}"
+		$shelter.animals.each { |k, v| puts v.to_s + "\n" }
 	end
 
 	
