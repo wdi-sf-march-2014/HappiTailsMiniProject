@@ -21,7 +21,7 @@ def display_clients
 	#puts "num_pets #{clients.num_pets}"
 	#puts "pets #{clients.pets}"
 	@clients.each { |key, value|
-	clients_arr << "#{value.name} is a #{value.age} year old #{value.gender} with #{value.num_children} kids and #{@num_pets} pets"
+	clients_arr << "#{value.name} is a #{value.age} year old #{value.gender} with #{value.num_children} kids and #{value.num_pets} pets"
 	}
 	puts clients_str = clients_arr.join("\n")
 	#this is almost correct not sure about the \n
