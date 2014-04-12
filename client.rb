@@ -1,4 +1,4 @@
-class Client < Animal
+class Client
   attr_accessor :name, :age, :gender, :number_of_children, :pets
 
   def initialize(name, age, gender, number_of_children)   
@@ -18,6 +18,6 @@ class Client < Animal
     @pets.each do |key, value| 
       pets += (value.to_s + "\n")
     end
-    return pets.chomp()
+    return pets.chomp
    end
 end
