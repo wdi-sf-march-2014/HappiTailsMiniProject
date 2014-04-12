@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Client do
+describe Client do 
 
   before :each do
     @client = Client.new('Beth', 30, 'female', 3)
