@@ -7,7 +7,7 @@
 
 class Client 
 
-	attr_accessor :name, :age, :gender, :children, :pets
+	attr_accessor :name, :age, :gender, :children, :pets, :animals
 
   def initialize(name, age, gender, children)
     @name = name
@@ -15,6 +15,7 @@ class Client
     @gender = gender
     @children = children
     @pets = {}
+    @animals ={}
   end
 
  def to_s

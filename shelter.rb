@@ -7,29 +7,31 @@
 # - Shelter:
 # 	- The shelter should display all the clients.
 # 	- The shelter should display all the animals.
+require_relative "data"
+
 
 class Shelter
 
-	attr_accessor :shelter, :address, :animals, :client
+	attr_accessor :shelter, :address, :animals, :clients
 
 	def initialize(shelter, address)
 		@shelter = shelter
 		@address = address
 		@animals = {}
-		@client = {}
+		@clients = {}
 	end
 
 	def to_s
-		"#{@shelter} shelter at #{@address} has #{@animals.length} animals and #{@client.length} clients"
+		"#{@shelter} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} clients"
 	end
+		
+		def display_clients
+ 			$shelter.clients.each { |k, v| puts (v.to_s) + "\n" }
+ 		end
 
-	def display_clients
- 		client = ""
- 	@client.each do |k, v|
- 		client += (v.to_s + "\n")
- 	end
- 		return client.chomp
- 	end
+ 	 def display_animals
+      $shelter.animals.each { |k, v| puts (v.to_s) + "\n" }
+  	end
 
 end
 

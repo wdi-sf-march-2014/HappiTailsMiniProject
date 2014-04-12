@@ -1,22 +1,30 @@
-require 'pry'
+require "pry"
 # require 'rainbow'
-require_relative 'data'
+require_relative "data"
 require_relative "animal"
 require_relative "client"
 require_relative "shelter"
 
-puts "Welcome to the HappiTails Amimal Shelter!"
-puts "a. Display all animals \nb. Display all clients \nc. Create an animal \nd. Create a client \nq. Quit"
+puts "Welcome to the HappiTails Amimal Shelter! \n\n"
+
+puts "A. Display all animals \n
+B. Display all clients \n
+C. Create an animal \n
+D. Create a client \n
+E. Adopt an animal \n
+F. Return an animal \n
+Q. Quit"
 
 response = gets.chomp.upcase
 
 while response != 'Q'
 	case response
 
-	# when "A" 
-# $shelter[]
+	when "A" 
+		$shelter.display_animals
 
-	# when "B"       
+	when "B"  
+		$shelter.display_clients
 
 	when "C" #new animal
 		puts "Enter name: "
@@ -28,7 +36,7 @@ while response != 'Q'
 		puts "Enter species: "
 		species = gets.chomp
 		new_animal = Animal.new(name, age, gender, species)
-		$shelter.animals[name] = new_animal
+		$shelter.animals[new_animal.name] = new_animal
 
 	when "D" #new client
 		puts "Enter name: "
@@ -45,7 +53,13 @@ while response != 'Q'
 	when "Q"
 	end
 
-puts "a. Display all animals \nb. Display all clients \nc. Create an animal \nd. Create a client \nq. Quit"
+puts "A. Display all animals \n
+B. Display all clients \n
+C. Create an animal \n
+D. Create a client \n
+E. Adopt an animal \n
+F. Return an animal \n
+Q. Quit"
 response = gets.chomp.upcase
 
 end
@@ -61,7 +75,7 @@ end
 #     - create an animal
 #     - create a client
 #   - The code for these features will go in your 
-#   main.rb, and function.rb files
+#   main.rb file
 
 # #####Phase 4
 # - Expand your menu
