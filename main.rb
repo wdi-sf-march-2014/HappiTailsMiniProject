@@ -7,15 +7,17 @@ require_relative 'shelter'
 require_relative 'data'
 # require_relative 'functions'
 
-puts ""
+puts " "
 puts "Please select an option:".bold.colorize( :blue )
-puts "------------------------"
-puts "(a) Display all animals"
-puts "(b) Display all clients"
-puts "(c) Create an animal"
-puts "(d) Create a client" 
-puts "(q) Abort mission"
-puts "------------------------"
+puts <<PARAGRAPH
+------------------------
+(a) Display all animals
+(b) Display all clients
+(c) Create an animal
+(d) Create a client 
+(q) Abort mission
+------------------------
+PARAGRAPH
 
 response = gets.chomp()
 
@@ -23,7 +25,7 @@ while response != "q"
 	case response
 	when "a" || "A"
 		puts "All animals:"
-		puts $shelter.display_animals
+		puts $shelter.display_animals.to_s.bold.colorize( :red )
 
 	when "b" || "B"   
 		puts "All clients:"
@@ -40,8 +42,9 @@ while response != "q"
 		puts "What is the name of this creature?"
 		name = gets.chomp
 		animal = Animal.new(name, age, gender, species)     
-		p animal
-		puts animal.to_s.bold.colorize( :red )
+		$shelter.animals[name.to_sym] = animal
+		puts "#{name} the #{species} has been added to the shelter database".bold.colorize( :red )
+		puts ""
 
 	when "d" || "D"   
 		puts "What is the name of the new client?"
@@ -58,13 +61,18 @@ while response != "q"
 
 end
 
-puts "Please select an option:"
-puts "(a) Display all animals"
-puts "(b) Display all clients"
-puts "(c) Create an animal"
-puts "(d) Create a client" 
-puts "(q) Abort mission"
+puts " "
+puts "Please select an option:".bold.colorize( :blue )
+puts <<PARAGRAPH
+------------------------
+(a) Display all animals
+(b) Display all clients
+(c) Create an animal
+(d) Create a client 
+(q) Abort mission
+------------------------
+PARAGRAPH
 
-response = gets.chomp
+response = gets.chomp()
 end
 
