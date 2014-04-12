@@ -22,7 +22,6 @@ class Animal
     @gender = gender
     @species = species
     @toys = []
-
   end
 
   # When we display the animal using puts or print, the

@@ -1,10 +1,11 @@
 # require the local files where the classes are defined
 require_relative 'shelter'
-require_relative 'clients'
+require_relative 'client'
 require_relative 'animal'
 
 # Instantiate a Shelter 
 $shelter = Shelter.new('HappiTails', '10 east 21st Street')
+
 
 # Instantiate clients.  Insert them into the shelter's clients hash
 $shelter.clients['Bob'] = Clients.new('Bob', 22, 'male', 0)

@@ -1,4 +1,4 @@
-class Client
+class Clients
 
   attr_accessor :name, :age, :gender, :kids, :pets_number
 
@@ -8,7 +8,7 @@ class Client
     @gender = gender
     @kids = kids
     @pets_number = 0
-    @pets_list = []
+    @pets = []
 
   end
 
@@ -16,9 +16,10 @@ class Client
     "#{@name} is a #{@age} year old #{@gender} with #{@kids} kids and #{@pets_number} pets"
   end
 
-  def display_pets
-    @pets_list.each {|pet| print pet.name}
-  end
+  # def display_pets
+  #   @pets.each {|pet| print pet.name}
+  #   # prints "Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves "
+  # end
 
 # Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves ")
 
