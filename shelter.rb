@@ -1,11 +1,13 @@
 class Shelter
 
-  attr_accessor :name, :address, :clients
+  attr_accessor :name, :address, :clients, :display_animals, :animals
 
   def initialize(name, address)
     @name = name
     @address = address
     @clients = {}
+    @animals = {}
+
   end
 
   def to_s
@@ -20,12 +22,13 @@ class Shelter
     return clients.chomp()
   end
 
+  def display_animals
+    animals.each_key { |k| puts k }
+    # "#{name} is a #{age} year old #{gender} #{species} that loves #{toys.join(", ")}"
+    return
+  end
+
+  def adopt
+  end
+
 end
-
-# it "prints the Shelter object's Clients" do
-#       client = Person.new("Beth", 30, "female", 3)
-#       @shelter.clients[client.name.to_sym] = client
-#       expect(@shelter.display_clients).to match("Beth is a 30 year old female with 3 kids and 0 pets")
-
-
-
