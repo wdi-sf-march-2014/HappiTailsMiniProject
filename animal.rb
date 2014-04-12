@@ -1,9 +1,9 @@
 class Animal
 
-  attr_accessor :name, :age, :gender, :species, :toys
+  attr_accessor :animal_name, :age, :gender, :species, :toys
 
-  def initialize(name, age, gender, species)
-    @name = name
+  def initialize(animal_name, age, gender, species)
+    @animal_name = animal_name
     @age = age
     @gender = gender
     @species = species
@@ -13,7 +13,7 @@ class Animal
   # When we display the animal using puts or print, the
   #   to_s method is called to pretty print an Animal
   def to_s
-   "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
+   "#{@animal_name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
   end
 
 end
