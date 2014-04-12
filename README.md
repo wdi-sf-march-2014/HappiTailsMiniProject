@@ -4,7 +4,7 @@
 - Mini-Project
 
 ###Prerequisites:
-- Ruby
+- Ruby 
   - Objects/Classes
   - Initializer
   - Accessors
