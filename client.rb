@@ -7,13 +7,14 @@ def initialize(name, age, gender, num_children)
 	@name = name 
 	@num_children = num_children
 	@age = age
-	@num_pets = 0
 	@gender = gender
 	@pets = {}
+	@num_pets = @pets.length
 end
 
 def to_s
-"#{name} is a #{age} year old female with #{num_children} kids and #{num_pets} pets"
+
+"#{name} is a #{age} year old #{gender} with #{num_children} kids and #{@pets.length} pets"
 #rspec required female in the sentence even thought it was never specified
 end
 
