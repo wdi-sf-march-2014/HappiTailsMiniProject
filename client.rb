@@ -1,17 +1,17 @@
 
 class Client 
-	attr_accessor :name, :age, :gender, :num_children, :pets
+	attr_accessor :client_name, :client_age, :client_gender, :num_children, :pets
 
-	def initialize(name, age, gender, num_children)
-		@name = name
-		@gender = gender
+	def initialize(client_name, client_age, client_gender, num_children)
+		@client_name = client_name
+		@client_gender = client_gender
 		@num_children = num_children
-		@age = age
+		@client_age = client_age
 		@pets = {}
 	end
 
 	def to_s
-    "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@pets.length} pets"
+    "#{@client_name} is a #{@client_age} year old #{@client_gender} with #{@num_children} kids and #{@pets.length} pets"
   end
 
   def display_pets
@@ -22,3 +22,5 @@ class Client
   end
 
 end
+
+# new_client = Client.new(client_name, client_age, client_gender, num_children)

@@ -22,8 +22,8 @@ describe Client do
     it "prints names of the Client object's pets" do
       tiny = Animal.new("Tiny", 3, "male", "cat")
       franz = Animal.new("Franz", 5, "male", "cat")
-      @client.pets[tiny.name.to_sym] = tiny
-      @client.pets[franz.name.to_sym] = franz
+      @client.pets[tiny.animal_name.to_sym] = tiny
+      @client.pets[franz.animal_name.to_sym] = franz
       expect(@client.display_pets).to match("Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves ")
     end
   end
