@@ -24,7 +24,13 @@ class Shelter
 	end
 
 	def display_animals
-		@animals.each_key {|name| puts name}
+		@animals.each_key do |name|
+			if @shelter.has_key?(name) 
+				puts "#{name} adopted by #{@shelter[name]}"
+			else 
+				puts "#{name}"
+			end
+		end
 	end
 
 	def display_clients
