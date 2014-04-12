@@ -16,11 +16,11 @@ class Client
 
 
 	def display_pets
-	 pets = ""
+	 pet = ""
    @pets.each do |k, v|
-   pets += (v.to_s + "\n")
+     pet += (v.to_s + "\n")
    end
-   return pets.chomp
+   return pet.chomp
   end
 end
 

@@ -9,12 +9,24 @@ class Shelter
 		@animals = {}
 	end
 
-	#prints the Shelter object's attributes in a sentence
-	#"HappiTails shelter at 10 East 21st Street has 0 animals and 0 people"
+	
 	def to_s
 		"#{@name} shelter at #{@address} has #{@animals.count} animals and #{@clients.count} people"
 	end
 
+	
+	def display_animals
+		"#{@animals}"
+	end
+
+	
+	def display_clients
+		client = []
+		@clients.each do |k, v|
+		client.push(v.to_s)
+		end
+		return client.join("\n")
+	end
 
 end
 
