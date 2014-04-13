@@ -21,7 +21,7 @@ class Animal
   #   to_s method is called to pretty print an Animal
   def to_s
     
-     "#{@name} is a #{@age} year old #{@gender} #{@species} that loves   #{@toys.join(", ")}"
+     "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
 
   end
 end

@@ -32,7 +32,7 @@ describe Shelter do
   end
 
   describe ".adopt" do
-    it "takes an Animal object from a Client and adds it to the shelter" do
+    it "takes an Animal object from a Shelter and adds it to the Client" do
     end
   end
 

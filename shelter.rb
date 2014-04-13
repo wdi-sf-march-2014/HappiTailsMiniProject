@@ -1,31 +1,90 @@
 class Shelter 
-	attr_accessor :client, :animals
+	attr_accessor :name, :address, :animals, :clients
+#clients, :animals 
+		def initialize(name, address)
+			@name = name
+			@address = address
+			@animals= {}	
+			@clients = {}
+		end
 
-	def initialize(name, address)
-		@name = name
-		@address = address
-		@animals= {}	
-		@client = {}
-	end
+		def to_s
+			"#{@name} shelter at #{@address} has #{@animals.count} animals and #{@clients.count} people"
+		end
+		
+		def display_clients
+			 client = []
+   			 @clients.each do |k,v| 
+         	 client.push(v.to_s)
+        	end
+        	
+        	puts client.join("\n")
+		end
+			puts "\n"
 
-	def to_s
-		"#{@name} shelter at #{@address} has #{@animals.length} animals and #{@client.length} people"
-	end
+		def display_animals
+			animal = []
+			@animals.each do |k,v|
+			animal.push(v.to_s)
+			end
+			puts animal.join{"\n"}
+		end
+			puts "\n"
 
-	
-	def display_clients
-      client = ""
-       @client.each do |k,v| 
-          client += v.to_s
-       end
-        return client
-	end
+		def create_client
+				puts "Enter a client name"
+				name = gets.chomp
+				puts "Enter a client age"
+				age = gets.chomp
+				puts "Enter a client gender"
+				gender = gets.chomp
+				puts "Enter the number of children"
+				number_of_children = gets.chomp
 
-	def display_animals
-	end
+			@clients[name] = Client.new(name, age, gender, number_of_children)
+			new_client = @clients[name]
 
-	def adopt
-	end
+			puts new_client
+			puts "\n"
+		end
 
+		def create_animal
+			puts "Enter a pet name"
+			name = gets.chomp
+			puts "Enter a pet age"
+			age = gets.chomp
+			puts "Enter a pet gender"
+			gender = gets.chomp
+			puts "Enter a pet species"
+			species = gets.chomp
+
+			@animals[name] = Animal.new(name, age, gender, species)
+			
+			new_animal = @animals[name] 
+			puts new_animal
+			puts "\n"
+		end
+
+
+  		def adopt
+  			puts "what client wants to adopt?"
+			client_adopt = gets.chomp
+		 	puts "What pet will be adopted?"
+		  	pet_adopt = gets.chomp
+				
+			@clients[client_adopt].pets[pet_adopt]=@animals[pet_adopt]
+			@animals.delete(pet_adopt)
+		end
+		
+		def return
+			puts "What client is returning a pet?"
+			client_returning = gets.chomp.to_sym
+
+			puts "What pet does client want to return?"
+			pet_return = gets.chomp
+
+			@animals[pet_return]=@clients[client_returning].pets[pet_return]
+			@clients[client_returning].pets.delete(pet_return)
+		end
 end
 

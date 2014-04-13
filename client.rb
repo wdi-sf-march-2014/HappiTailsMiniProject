@@ -2,7 +2,7 @@ class Client
 
   # Set up accessors and mutators for the attributes of an Animal
   # attr_accessor sets up both for you
-  attr_accessor :name, :number_of_children, :age, :pets
+  attr_accessor :name, :age, :gender, :number_of_children, :pets
 
 
   # Used when creating a new animal.
@@ -32,5 +32,6 @@ class Client
         return pets.chomp
 
     end
+
   # end
 end

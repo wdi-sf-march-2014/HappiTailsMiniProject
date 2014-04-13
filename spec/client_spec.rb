@@ -1,4 +1,4 @@
-require 'spec_helper'
+srequire 'spec_helper'
 
 describe Client do
 
