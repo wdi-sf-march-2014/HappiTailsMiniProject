@@ -1,6 +1,7 @@
 class Animal
 
   attr_accessor :name, :age, :gender, :species, :toys
+  
   def initialize(name, age, gender, species)
     @name = name
     @age = age
@@ -10,7 +11,7 @@ class Animal
   end
 
   def to_s
-    "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
+    puts "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
   end
 
 end
