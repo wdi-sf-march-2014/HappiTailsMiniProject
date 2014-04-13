@@ -8,7 +8,7 @@ require_relative 'client'
 #binding.pry
 
   puts `clear`
-  puts "Welcome to the Happi Tails Animal Shelter"
+  puts "Welcome to the 'Get Yo Pet On Animal Shelter' "
   puts "Please select from the following options: "
   puts '(1) List Animals'
   puts '(2) List Clients'
