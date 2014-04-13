@@ -17,6 +17,6 @@ class Shelter
   end
 
   def display_animals
-      $shelter.animals.each_value { |v| puts v }
+    $shelter.animals.each_value { |v| puts v }
   end
 end

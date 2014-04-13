@@ -1,28 +1,30 @@
 require 'pry'
+require 'colorize'
 require_relative 'menu'
 require_relative 'shelter'
 require_relative 'client'
 require_relative 'animal'
 require_relative 'data'
-binding.pry
 
+logo
+gets
 puts "=" * 80
 puts "Welcome to HappiTails".center(80)
 puts "=" * 80
 puts $shelter
 
+  menu_options()
   puts
-  puts "Please choose one of the following options:".center(80)
   puts
-  puts "(a) display all animals".ljust(40) + "(c) create an animal".ljust(40)
-  puts "(b) display all clients".ljust(40) + "(d) create a client".ljust(40)
-  puts 
-  puts "(q) quit"
   puts
-  response = gets.chomp
+  puts
+  puts
+  puts
+  puts
+  response()
 
-while response != 'q'
-	case response
+while @response != 'q'
+	case @response
 		when "a"
 			puts
 			puts "All animals:"
@@ -50,27 +52,38 @@ while response != 'q'
 			puts "Enter #{name}'s favorite toys:"
 			toy = gets.chomp.capitalize
 
-			animal = Animal.new(name, age, sex, species)
-			animal.toys.push(toy)
+			$shelter.animals[name] = Animal.new(name, age, sex, species)
+
+			$shelter.animals[name].toys.push(toy)
 
 			puts
 			puts "Animal created:"
 			puts '------------'
 			puts
-			puts animal
+			puts $shelter.animals[name]
 		when "d"
+			puts
+			puts "Enter the name of the client:"
+			name = gets.chomp.capitalize
+			puts "Enter #{name}'s age:"
+			age = gets.chomp
+			puts "Enter #{name}'s address:"
+			address = gets.chomp.downcase
+			puts "Enter the species #{name} would like to adopt:"
+			adoption_preference = gets.chomp.capitalize
+
+			$shelter.clients[name] = Client.new(name, age, address, adoption_preference)
+
+			puts
+			puts "Client created:"
+			puts '------------'
+			puts
+			puts $shelter.clients[name]
 		else 
 			puts
-			puts "Please select an option from above (a, b, c, d, or q):"
+			puts "Please choose a, b, c, d, or q".bold.colorize(:red)
   	end
    	
-   	  puts
-	  puts "Please choose one of the following options:".center(80)
-	  puts
-	  puts "(a) display all animals".ljust(40) + "(c) create an animal".ljust(40)
-	  puts "(b) display all clients".ljust(40) + "(d) create a client".ljust(40)
-	  puts 
-	  puts "(q) quit"
-	  puts
-	  response = gets.chomp
+   	  menu_options()
+	  response()
 end

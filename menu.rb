@@ -1,9 +1,14 @@
 def menu_options()
+	puts
+	puts
+	puts
+	puts
+	puts
   puts
   puts "Please choose one of the following options:".center(80)
   puts
-  puts "(a) display all animals".ljust(40) + "(c) create an animal".ljust(40)
-  puts "(b) display all clients".ljust(40) + "(d) create a client".ljust(40)
+  puts "(a) display all animals".ljust(40) + "(b) display all clients".ljust(40)
+  puts "(c) create an animal".ljust(40) + "(d) create a client".ljust(40)
   puts 
   puts "(q) quit"
   puts
@@ -14,26 +19,27 @@ def response()
 end
 
 def logo()
-puts"          ,.                                       "
-puts"         /  `-._                                   "
-puts"        /       `.     ___            __           "
-puts"      ,'       _/ ,---'   `-.       ,'  `.         "
-puts"     /   /`---'\\/           `--.  /       \\        "
-puts"    /   |       /             _  `/  -.    `.      "
-puts"   \\   |              ,.    /O\\\\   \\        \\     "
-puts"    \\   `.           /O\\  '   `. `. /\\     ||     "
-puts"      `._  `-.       /   ,   .    ,  `. \\  ,'     "
-puts"         `-.        .   /     `--'    \\ \\/       "
-puts"           \\        `-',d8o8b.        /           "
-puts"            \\          dP'88`8b      /            "
-puts"  HappiTails \\  ,'`.     `YP'       |             "
-puts"  Animal      \\/ .        |       | |             "
-puts"  Shelter      /  |\\       :       |/\\           "
-puts"              /   | `.   ,:::     /\\  \\            "
-puts"             ,\       `-'`""'`.--'  )o )           "
-puts"            (o `.__,               / o/            "
-puts"            \\ o  \\_           ,-'o /             "
-puts"             \\  o  o`-----.__,' o ,'              "
-puts"               `----. o  o  o  o ,'                "
-puts"                     `----------'                  "
+puts"          ,.                                       ".center(80)
+puts"         /  `-._                                   ".center(80)
+puts"        /       `.     ___            __           ".center(80)
+puts"      ,'       _/ ,---'   `-.       ,'  `.         ".center(80)
+puts"     /   /`---'\\/           `--.  /       \\        ".center(80)
+puts"    /   |       /             _  `/  -.    `.      ".center(80)
+puts"   \\   |              ,.    /O\\\\   \\        \\     ".center(80)
+puts"    \\   `.           /O\\  '   `. `. /\\     ||     ".center(80)
+puts"      `._  `-.       /   ,   .    ,  `. \\  ,'     ".center(80)
+puts"         `-.        .   /     `--'    \\ \\/       ".center(80)
+puts"           \\        `-',d8o8b.        /           ".center(80)
+puts"            \\          dP'88`8b      /            ".center(80)
+puts"  HappiTails \\  ,'`.     `YP'       |             ".center(80)
+puts"  Animal      \\/ .        |       | |             ".center(80)
+puts"  Shelter      /  |\\       :       |/\\           ".center(80)
+puts"              /   | `.   ,:::     /\\  \\            ".center(80)
+puts"             ,\       `-'`""'`.--'  )o )           ".center(80)
+puts"            (o `.__,               / o/            ".center(80)
+puts"            \\ o  \\_           ,-'o /             ".center(80)
+puts"             \\  o  o`-----.__,' o ,'              ".center(80)
+puts"               `----. o  o  o  o ,'                ".center(80)
+puts"                     `----------'                  ".center(80)
+puts
 end
