@@ -1,4 +1,4 @@
-class Client 
+class Client
 
   attr_accessor :name, :age, :gender, :num_children, :num_pets, :pets
 
@@ -12,16 +12,15 @@ class Client
   end
 
   def to_s
-    "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@num_pets} pets"  
+    "#{@name} is a #{@age} year old #{@gender} with #{@num_children} kids and #{@num_pets} pets"
   end
 
   def display_pets
-  	pets = ""
-  	@pets.each do |k,v|
-  		pets += (v.to_s + "\n")
-  	end
-  	return pets.chomp
+    pets = ""
+    @pets.each do |k,v|
+      pets += (v.to_s + "\n")
+    end
+    return pets.chomp
   end
-  
-end
 
+end

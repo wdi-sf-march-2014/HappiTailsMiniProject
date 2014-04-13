@@ -27,5 +27,4 @@ describe Client do
       expect(@client.display_pets).to match("Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves ")
     end
   end
-
 end
