@@ -4,7 +4,7 @@ require_relative 'shelter'
 require_relative 'client'
 require_relative 'animal'
 require_relative 'data'
-#binding.pry
+binding.pry
 
 puts "=" * 80
 puts "Welcome to HappiTails".center(80)
@@ -38,13 +38,33 @@ while response != 'q'
 			$shelter.display_clients
 			puts
 		when "c"
+			puts
+			puts "Enter the name of the animal:"
+			name = gets.chomp.capitalize
+			puts "Enter #{name}'s age:"
+			age = gets.chomp
+			puts "Enter #{name}'s sex:"
+			sex = gets.chomp.downcase
+			puts "Enter #{name}'s species:"
+			species = gets.chomp.capitalize
+			puts "Enter #{name}'s favorite toys:"
+			toy = gets.chomp.capitalize
+
+			animal = Animal.new(name, age, sex, species)
+			animal.toys.push(toy)
+
+			puts
+			puts "Animal created:"
+			puts '------------'
+			puts
+			puts animal
 		when "d"
 		else 
 			puts
 			puts "Please select an option from above (a, b, c, d, or q):"
   	end
    	
-   	 puts
+   	  puts
 	  puts "Please choose one of the following options:".center(80)
 	  puts
 	  puts "(a) display all animals".ljust(40) + "(c) create an animal".ljust(40)
@@ -54,4 +74,3 @@ while response != 'q'
 	  puts
 	  response = gets.chomp
 end
-#puts "*" * 80

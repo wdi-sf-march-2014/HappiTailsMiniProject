@@ -1,21 +1,21 @@
 class Animal
-  attr_accessor :name, :age, :gender, :species, :toys
+  attr_accessor :name, :age, :sex, :species, :toys
 
-  def initialize(name, age, gender, species)
+  def initialize(name, age, sex, species)
     @name = name
     @age = age
-    @gender = gender
+    @sex = sex
     @species = species
     @toys = []
   end
 
   def to_s
-    if gender == "male"
+    if sex == "male"
       pronoun = "his"
-    elsif gender == "female"
+    elsif sex == "female"
       pronoun = "her"
     end
-    "#{name} - #{age} year old #{gender} #{species}, loves #{pronoun} #{toys.join(", ")}."
+    "#{name} - #{age} year old #{sex} #{species}, loves #{pronoun} #{toys.join(", ")}."
   end
 end
   
