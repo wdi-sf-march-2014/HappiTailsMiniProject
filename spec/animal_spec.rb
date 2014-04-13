@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Animal do
+describe "Animal" do
 
   before :each do
     @animal = Animal.new("Tiny", 3, "male", "cat")
