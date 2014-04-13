@@ -1,4 +1,3 @@
-require 'pry'
 require 'colorize'
 require_relative 'menu'
 require_relative 'shelter'
@@ -110,8 +109,7 @@ while @response != 'q'
 		else 
 			puts
 			puts "Please choose a, b, c, d, adopt, return, or q".bold.colorize(:red)
-  	end
-   binding.pry	
+  	end	
    	  menu_options()
 	  response()
 end
