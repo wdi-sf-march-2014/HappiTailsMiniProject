@@ -23,3 +23,7 @@ $shelter.animals['Fido'] = Animal.new('Fido', 8, 'male', 'Dog')
 $shelter.animals['Fido'].toys << 'Chew Toy'
 $shelter.animals['Sport'] = Animal.new('Sport', 1, 'male', 'Dog')
 $shelter.animals['Sport'].toys << 'Treats'
+
+# 
+# clients = {name => "Bob", age => 22, gender => male, num_pets => 0}
+# animals = {name => "Spot", age => 3, gender => male, species => "Dog"}
