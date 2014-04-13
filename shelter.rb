@@ -78,13 +78,19 @@ class Shelter
 		
 		def return
 			puts "What client is returning a pet?"
-			client_returning = gets.chomp.to_sym
+			client_return = gets.chomp
 
 			puts "What pet does client want to return?"
 			pet_return = gets.chomp
 
-			@animals[pet_return]=@clients[client_returning].pets[pet_return]
-			@clients[client_returning].pets.delete(pet_return)
+			@animals[pet_return]=@clients[client_return].pets[pet_return]
+			@clients[client_return].pets.delete(pet_return)
+			#@clients.delete(pet_return)
 		end
+
+		#def return(client_name,animal_name)
+						# @animals[animal_name]=@clients[client_name].pets[animal_name]
+						# @clients[client_name].pets.delete(animal_name)
+						#end
 end
 
