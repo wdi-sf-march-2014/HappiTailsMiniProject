@@ -45,10 +45,27 @@ while input != "5"
 		  $shelter.animals.each do |k, v|
 				puts "#{v}"
 			end
+
 		
 		when "4"
 			#puts "Create clients"
 			
+			puts "Name: "
+			name = gets.chomp
+			puts "Age: "
+			age = gets.chomp
+			puts "Gender: "
+			gender = gets.chomp
+			puts "Number of kids: "
+			kids = gets.chomp
+
+			$shelter.clients[name] = Client.new(name, age, gender, kids)
+			puts "\n"
+
+			$shelter.clients.each do |k, v|
+				puts "#{v}"
+			end
+
 	end
 
 puts "\n"
