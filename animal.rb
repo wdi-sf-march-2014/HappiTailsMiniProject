@@ -2,12 +2,16 @@ class Animal
 
   attr_accessor :animal_name, :age, :gender, :species, :toys
 
-  def initialize(animal_name, age, gender, species)
+  def initialize(animal_name, age, gender, species, toy=nil)
     @animal_name = animal_name
     @age = age
     @gender = gender
     @species = species
-    @toys = []
+    if toy 
+      @toys = [toy]
+    else 
+      @toys = []
+    end
   end
 
   # When we display the animal using puts or print, the

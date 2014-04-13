@@ -23,39 +23,43 @@ while response != 'Q'
 	when "A" 
 		$shelter.display_animals
 
+
 	when "B"  
 		$shelter.display_clients
 
 	when "C" #new animal
 		puts "Enter name: "
-		name = gets.chomp
+		pet_name = gets.chomp
 		puts "Enter age: "
 		age = gets.chomp	
 		puts "Enter gender: "
 		gender = gets.chomp
 		puts "Enter species: "
 		species = gets.chomp
-		new_animal = Animal.new(pet_name, age, gender, species)
+		puts "Enter toy: "
+		toy = gets.chomp.capitalize
+		new_animal = Animal.new(pet_name, age, gender, species, toy)
 		$shelter.animals[new_animal.animal_name] = new_animal
+		puts "The new animal, #{pet_name}, has been added."
 
 	when "D" #new client
 		puts "Enter name: "
-		name = gets.chomp
+		client_name = gets.chomp
 		puts "Enter age: "
 		age = gets.chomp
 		puts "Enter gender: "
 		gender = gets.chomp
 		puts "Enter number of children: "
 		children = gets.chomp
-		new_client = Client.new(cliet_name, age, gender, children)
+		new_client = Client.new(client_name, age, gender, children)
 		$shelter.clients[new_client.client_name]= new_client
+		puts "The new client, #{client_name}, has been added."
 
 	when "E" #adopt
 		puts "Enter client name"
 		client_name = gets.chomp.capitalize
 		puts "Enter a pet name"
 		pet_name = gets.chomp.capitalize
-
 		$shelter.adopt(client_name, pet_name)
 
 	when "F" #return

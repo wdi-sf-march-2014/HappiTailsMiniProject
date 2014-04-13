@@ -25,26 +25,27 @@ class Shelter
 	end
 		
 	def display_clients
- 			$shelter.clients.each { |k, v| puts (v.to_s) + "\n" }
+		puts "The shelter currently has the following clients: "
+ 		$shelter.clients.each { |k, v| puts (v.to_s) + "\n" }
+
  	end
 
  	def display_animals
-      $shelter.animals.each { |k, v| puts (v.to_s) + "\n" }
+ 		puts "The shelter currently has the following animals: "
+    $shelter.animals.each { |k, v| puts (v.to_s) + "\n" }
+
   end
 
   def adopt(client_name, pet_name)
-  		puts @clients[client_name]
-  		puts @animals
-  		@clients[client_name].animals[pet_name] = @animals[pet_name]
-  		@animals.delete(pet_name)
-  		puts @animals
+  	@clients[client_name].animals[pet_name] = @animals[pet_name]
+  	@animals.delete(pet_name)
+  	puts "Congratulations! #{pet_name} is now a part of your family!"
   end
 
   def return(client_name, pet_name)
-  		@animals[pet_name] = @clients[client_name].animals[pet_name]
-  		@clients.delete(pet_name)
-  		puts @animals
-  		puts "You're a bad person."
+  	@animals[pet_name] = @clients[client_name].animals[pet_name]
+  	@clients[client_name].animals.delete(pet_name)
+  	puts "#{pet_name} has been returned to the shelter. You're a bad person."
   end
 
 end

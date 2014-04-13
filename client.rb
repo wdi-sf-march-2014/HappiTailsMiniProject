@@ -14,12 +14,15 @@ class Client
     @age = age
     @gender = gender
     @children = children
-    @num_pets = {}
     @animals ={}
   end
 
+  def num_pets
+  	animals.length
+  end
+
  def to_s
- 	"#{@client_name} is a #{@age} year old #{@gender} with #{@children} kids and #{@num_pets.length} pets"
+ 	"#{@client_name} is a #{@age} year old #{@gender} with #{@children} kids and #{num_pets} pets"
  end
 
  def display_pets
