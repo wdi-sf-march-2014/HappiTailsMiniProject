@@ -31,6 +31,12 @@ while response != 'q'
 			$shelter.display_animals
 			puts
 		when "b"
+			puts
+			puts "All clients:"
+			puts '------------'
+			puts
+			$shelter.display_clients
+			puts
 		when "c"
 		when "d"
 		else 

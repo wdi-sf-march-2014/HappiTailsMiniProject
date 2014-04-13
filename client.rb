@@ -10,6 +10,6 @@ class Client
   end
 
   def to_s
-    "#{name} - #{age} year old #{gender}, lives at #{client_address}, would like to adopt a #{adoption_preference}."
+    "#{name} - #{age} years old, lives at #{client_address}, would like to adopt a #{adoption_preference}."
   end
 end
