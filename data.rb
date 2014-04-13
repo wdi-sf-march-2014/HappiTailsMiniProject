@@ -4,7 +4,7 @@
 require_relative 'shelter'
 require_relative 'client'
 require_relative 'animal'
-
+# binding.pry
 # Instantiate a Shelter 
 $shelter = Shelter.new('HappiTails', '10 east 21st Street')
 

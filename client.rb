@@ -1,25 +1,17 @@
-#client will have name, number of children, age, gender,
-#number of pets
-
-# Relationships:
-# A client should be able to adopt an animal.
-# A client should be able to put an animal up for adoption
-
 class Client 
-	attr_accessor :name, :age, :gender, :num_children, :num_pets, :pets
+	attr_accessor :name, :age, :gender, :num_pets, :pets, :animals
 
-	def initialize(name, age, gender, num_children, num_pets)
+	def initialize(name, age, gender, num_pets)
 		@name = name
 		@age = age
 		@gender = gender
-		@num_children = num_children
 		@num_pets = num_pets
 		@pets = {}
+		@animals = {}
 	end
 
 	def to_s
-		"#{@name} is a #{@age} year old #{@gender} with \
-#{@num_children} kids and #{@num_pets} pets"
+		"#{@name} is a #{@age} year old #{@gender} with #{@num_pets} pets"
 	end
 	
 	def display_pets
@@ -29,6 +21,16 @@ class Client
 		end
 		return pets.chomp
 	end	
+
+	# def add_animal(animal)
+	# 	@animals[animal.name] = animal
+	# 					#fluffy		{age, name, gender, species}
+	# end
+
+	# def delete_animal(animal)
+	# 	@animals[animal.name] = animal
+	# end
+
 end
 
 

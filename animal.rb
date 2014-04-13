@@ -3,7 +3,7 @@ class Animal
 
   # Set up accessors and mutators for the attributes of an Animal
   # attr_accessor sets up both for you
-  attr_accessor :name, :age, :gender, :species, :toys
+  attr_accessor :name, :age, :gender, :species, :toys, :animals
 
   # Used when creating a new animal.
   #   Example:
@@ -24,9 +24,5 @@ that loves #{@toys.join(", ")}"
   end
 end
 
-# describe ".to_s" do
-#     it "prints the Animal object's attributes in a sentence" \do
-#       expect(@animal.to_s).to match("Tiny is a 3 year old male \
-#         cat that loves mice, string")
-#     end
+
 

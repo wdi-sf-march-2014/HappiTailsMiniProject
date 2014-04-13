@@ -1,34 +1,46 @@
+require 'pry'
+
+#require_relative 'data'
+#binding.pry
 class Shelter 
-		attr_accessor :shelter, :address, :animals, :client
+		attr_accessor :shelter, :address, :clients, :animals
 
 	def initialize(shelter, address)
 		@shelter = shelter
 		@address = address
+		@clients = {}
 		@animals = {}
-		@client = {}
 	end
 
 	def to_s
-		"#{@shelter} shelter at #{@address} has #{@animals.length} animals and #{@client.length} people"
+		"#{@shelter} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} people"
 	end
 
 	def display_animals
-		animals = ""
-		@animals.each do |k, v|
-			animals += (v.to_s)
-		end
-		return animals.chomp
+		$shelter.animals.each {|k,v| puts v.to_s + "\n"}
 	end
 
 	def display_clients
-		client = ""
-		@client.each do |k, v|
-			client += (v.to_s)
-		end
-		return client.chomp
+		$shelter.clients.each {|k, v| puts v.to_s}
 	end
 
-	def adopt
+	def adopt_animal(client_name, animal_name)
+		@clients[client_name].pets[animal_name] = @animals[animal_name]
+		@animals.delete(animal_name)
+	end
+
+	def create_animal(animal_name, animal_age, animal_gender, species)
+		new_animal = Animal.new(animal_name, animal_age, animal_gender, species)
+		@animals[animal_name] = new_animal
+	end
+		
+	def create_client(name, age, gender, num_pets)
+		new_client = Client.new(name, age, gender, num_pets)
+	end
+	
+	def return_animal(client_name, animal_name)
+		@animals[animal_name] = @clients[client_name].animals[animal_name]
+		@clients[client_name].animals.delete(animal_name) 
 	end
 end
 
