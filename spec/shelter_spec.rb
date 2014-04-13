@@ -25,14 +25,14 @@ describe Shelter do
 
   describe ".display_clients" do
     it "prints the Shelter object's Clients" do
-      client = Person.new("Beth", 30, "female", 3)
-      @shelter.clients[client.name.to_sym] = client
+      client = Client.new("Beth", 30, "female", 3)
+      @shelter.clients[client.name] = client
       expect(@shelter.display_clients).to match("Beth is a 30 year old female with 3 kids and 0 pets")
     end
   end
 
   describe ".adopt" do
-    it "takes an Animal object from a Client and adds it to the shelter" do
+    it "takes an Animal object from a Shelter and adds it to the Client" do
     end
   end
 
