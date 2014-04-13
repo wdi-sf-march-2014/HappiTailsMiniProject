@@ -23,3 +23,4 @@ class Animal
     return "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
   end
 end
+
