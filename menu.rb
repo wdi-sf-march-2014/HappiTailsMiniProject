@@ -4,12 +4,12 @@ def menu_options()
 	puts
 	puts
 	puts
-  puts
   puts "Please choose one of the following options:".center(80)
   puts
   puts "(a) display all animals".ljust(40) + "(b) display all clients".ljust(40)
   puts "(c) create an animal".ljust(40) + "(d) create a client".ljust(40)
-  puts 
+  puts "(adopt) an animal".ljust(40) + "(return) an animal".ljust(40)
+  puts
   puts "(q) quit"
   puts
 end

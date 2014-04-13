@@ -1,5 +1,5 @@
 class Shelter
-  attr_accessor :name, :address, :clients, :animals, :display_animals
+  attr_accessor :name, :address, :clients, :animals
 
   def initialize(name, address)
     @name = name
@@ -18,5 +18,14 @@ class Shelter
 
   def display_animals
     $shelter.animals.each_value { |v| puts v }
+  end
+
+  def adopt(animal, client)
+    $shelter.clients[client].pets[animal] = $shelter.animals[animal]
+    $shelter.animals.delete(animal)  
+  end
+  def return(animal, client)
+    $shelter.animals[animal] = $shelter.clients[client].pets[animal]
+    $shelter.clients[client].pets.delete(animal)
   end
 end

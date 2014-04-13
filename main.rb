@@ -20,7 +20,6 @@ puts $shelter
   puts
   puts
   puts
-  puts
   response()
 
 while @response != 'q'
@@ -36,6 +35,7 @@ while @response != 'q'
 			puts
 			puts "All clients:"
 			puts '------------'
+			puts
 			puts
 			$shelter.display_clients
 			puts
@@ -60,7 +60,12 @@ while @response != 'q'
 			puts "Animal created:"
 			puts '------------'
 			puts
-			puts $shelter.animals[name]
+			puts $shelter.animals[name].to_s.bold.colorize(:yellow)
+			puts
+			puts
+			puts
+			puts
+			puts
 		when "d"
 			puts
 			puts "Enter the name of the client:"
@@ -78,12 +83,35 @@ while @response != 'q'
 			puts "Client created:"
 			puts '------------'
 			puts
-			puts $shelter.clients[name]
+			puts $shelter.clients[name].to_s.bold.colorize(:yellow)
+			puts
+			puts
+			puts
+			puts
+			puts
+		when "adopt"
+			puts
+			puts "Enter the adopted animal: (#{$shelter.animals.keys.join(", ")})"
+			adoptee = gets.chomp.capitalize
+			puts "Enter the adopting client: (#{$shelter.clients.keys.join(", ")})"
+			adopter = gets.chomp.capitalize
+			$shelter.adopt(adoptee,adopter)
+			puts
+			puts "#{$shelter.clients[adopter].pets[adoptee].name} has been adopted by #{$shelter.clients[adopter].name}.".bold.colorize(:yellow)
+		when "return"
+			puts
+			puts "Enter the returning client: (#{$shelter.clients.keys.join(", ")})"
+			returner = gets.chomp.capitalize
+			puts "Enter the returned animal: (#{$shelter.clients[returner].pets.keys.join(", ")})"
+			returnee = gets.chomp.capitalize
+			$shelter.return(returnee,returner)
+			puts
+			puts "#{$shelter.animals[returnee].name} has been returned by #{$shelter.clients[returner].name}.".bold.colorize(:yellow)
 		else 
 			puts
-			puts "Please choose a, b, c, d, or q".bold.colorize(:red)
+			puts "Please choose a, b, c, d, adopt, return, or q".bold.colorize(:red)
   	end
-   	
+   binding.pry	
    	  menu_options()
 	  response()
 end
