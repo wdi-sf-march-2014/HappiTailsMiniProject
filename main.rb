@@ -5,9 +5,7 @@ require_relative 'data'
 require_relative 'animal'
 require_relative 'shelter'
 require_relative 'client'
-
 #binding.pry
-
 
   puts `clear`
   puts "Welcome to the Happi Tails Animal Shelter"
@@ -42,7 +40,7 @@ while choice != '7'
     puts "Make another choice or type 7 to quit: "
     break unless choice != "7"
   when "3"
-    print "Please enter the animal's name: "
+    print "Please enter the animal's name that you want to give up for adoption: "
     animal_name = gets.chomp
     print "Please enter the animal's age: "
     animal_age = gets.chomp
@@ -71,18 +69,23 @@ while choice != '7'
   when "5"
     puts "What is your name?"
 		client_name = gets.chomp
-		puts "Thank you. Here are the animals that are up for adoption: "
+    puts
+		puts "Thank you #{client_name}. Here are the animals that are available for adoption: "
 		$shelter.display_animals
 		puts
 		puts "Please type the name of the Animal you want to adopt: "
 		animal_name = gets.chomp
-		  if $shelter.clients[client_name] == $shelter.clients[client_name] &&  $shelter.animals[animal_name] == $shelter.animals[animal_name] 
+		  if $shelter.clients[client_name] == $shelter.clients[client_name] &&  animal_name == $shelter.animals[animal_name] 
 		        $shelter.animals.delete(animal_name)
+      else animal_name != $shelter.animals[animal_name]
+        puts "Sorry, we didn't recognize that animal name. Can you please type again?"
+        animal_name = gets.chomp
       end
+    puts "Awesome! Thank you so much for adopting #{animal_name}! May you live happily ever after together!"
     puts "Make another choice or type 7 to quit: "
     break unless choice != "7"
   when "6"
-   puts "Sorry to hear you want to return an animal. "
+   puts "Sorry to hear it didn't work out with the animal you adopted. "
    puts "What's your name? "
    client_name = gets.chomp
 	 puts "What is the name of the pet you are returning? "
@@ -100,7 +103,9 @@ while choice != '7'
 	         $shelter.animals.merge(@animals => new_animal)
     end
    puts
-   puts "#{animal_name} has been added to our Shelter."
+   puts "#{animal_name} has been added back into our Shelter."
+   puts "Please feel free to take a look at the rest of our animals and/or stop by another time. \
+We really appreciate your business. "
    puts
    puts "Make another choice or type 7 to quit: "
     break unless choice != "7" 
@@ -114,7 +119,6 @@ while choice != '7'
    		menu 
    	end
 end
-#menu
 
 
 
