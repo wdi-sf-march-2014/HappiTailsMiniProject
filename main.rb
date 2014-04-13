@@ -12,7 +12,7 @@ require_relative 'shelter'
 
 
 puts "Welcome to the HappiTails Shelter."
-puts "What would you like to do?"
+puts "Please choose a function:"
 puts"        (DA) to display all animals in the Shelter
 	(DC) to display all clients of the Shelter
 	(NA) to create a new animal
@@ -67,18 +67,18 @@ while response != "Q"
 
 	when "A"
 	 puts "Which client is adopting an animal today?"
-	 client_name = gets.chomp
+	 client_name = gets.chomp.capitalize
 	 puts "Which animal are they adopting?"
-	 animal_name = gets.chomp
+	 animal_name = gets.chomp.capitalize
 
 	 $shelter.adopt(client_name, animal_name)
 	 puts "Adoption Confirmed"
 
 	when "RP"
-	 puts "What client is returning? an animal?"
-	 client_name = gets.chomp
+	 puts "Which client is returning an animal?"
+	 client_name = gets.chomp.capitalize
 	 puts "Which animal are they returning?"
-	 animal_name = gets.chomp
+	 animal_name = gets.chomp.capitalize
 
 	 $shelter.return(client_name, animal_name)
 	 puts "You have returned your animal. Who hates puppies???"
