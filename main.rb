@@ -20,7 +20,6 @@ while input != "5"
 			puts $shelter.address
 			# puts "Display animals"
 		when "2"
-			puts "Display clients"
 			puts $shelter.display_clients
 		
 		when "3"
