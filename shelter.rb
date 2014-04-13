@@ -6,22 +6,17 @@ class Shelter
     @address = address
     @clients = {}
     @animals = {}
-
   end
+  
   def to_s
-    "The #{name} shelter at #{address} has #{animals.count} animals and #{clients.count} clients.".center(80)
+    "#{name} animal shelter - #{address}".center(80)
   end
+  
   def display_clients
-    clients = ""
-    @clients.each do |key, value| 
-      clients += (value.to_s + "\n")
-    end
-    return clients
+    $shelter.clients.each_value { |v| puts v }
   end
 
   def display_animals
       $shelter.animals.each_value { |v| puts v }
   end
-
-  
 end

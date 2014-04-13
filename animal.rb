@@ -10,9 +10,12 @@ class Animal
   end
 
   def to_s
-    "#{name} is a #{age} year old #{gender} #{species} that loves their #{toys.join(", ")}"
+    if gender == "male"
+      pronoun = "his"
+    elsif gender == "female"
+      pronoun = "her"
+    end
+    "#{name} - #{age} year old #{gender} #{species}, loves #{pronoun} #{toys.join(", ")}."
   end
 end
-
-
   

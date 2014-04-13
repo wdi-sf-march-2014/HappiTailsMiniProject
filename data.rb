@@ -7,10 +7,10 @@ require_relative 'animal'
 $shelter = Shelter.new('HappiTails', '10 East 21st Street')
 
 # Instantiate clients.  Insert them into the shelter's clients hash
-$shelter.clients['Bob'] = Client.new('Bob', 22, 'male', 0)
-$shelter.clients['Sue'] = Client.new('Sue', 31, 'female', 2)
-$shelter.clients['Jil'] = Client.new('Jil', 46, 'female', 1)
-$shelter.clients['Sam'] = Client.new('Sam', 87, 'male', 3)
+$shelter.clients['Bob'] = Client.new('Bob', 22, '123 Main Street', 'Dog')
+$shelter.clients['Sue'] = Client.new('Sue', 31, '234 Oak Street', 'Dog')
+$shelter.clients['Jil'] = Client.new('Jil', 46, '345 Pine Street', 'Cat')
+$shelter.clients['Sam'] = Client.new('Sam', 87, '45 Broadway', 'Cat')
 
 # Instantiate animals.  Insert them into the shelter's animals hash
 $shelter.animals['Spot'] = Animal.new('Spot', 3, 'male', 'Dog')
