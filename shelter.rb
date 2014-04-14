@@ -15,6 +15,8 @@ attr_accessor :name, :address, :animals, :clients
 
   def display_clients
     $shelter.clients.each {|k, v| puts (v.to_s) + "\n"}
+    #return "#{@name} is a #{@age} year old #{@gender} 3 kids and 0 pets"
+    #return "Beth is a 30 year old female with 3 kids and 0 pets"
     # client_arr = []
     # @clients.each do |k,v|
     # client_arr.push(v.to_s)
