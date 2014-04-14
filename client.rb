@@ -6,7 +6,8 @@ class Client
 		@gender = gender
 		@num_children = num_children
 		@num_pets = []
-		@pets = {}
+		@pets = []
+
 	end
 
 	def to_s
@@ -16,7 +17,7 @@ class Client
 	#Beth is a 30 year old female with 3 kids and 0 pets
 
 	def display_pets
-		pets.values.join("\n")
+		pets.join("\n")
 	end
 
 	# describe ".display_pets" do

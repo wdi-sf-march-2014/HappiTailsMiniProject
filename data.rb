@@ -9,8 +9,6 @@ $shelter = Shelter.new('HappiTails', '10 east 21st Street')
 # Instantiate clients.  Insert them into the shelter's clients hash
 $shelter.clients['Bob'] = Client.new('Bob', 22, 'male', 0)
 $shelter.clients['Sue'] = Client.new('Sue', 31, 'female', 2)
-$shelter.clients['Jil'] = CLient.new('Jil', 46, 'female', 1)
-$shelter.clients['Sam'] = CLient.new('Sam', 87, 'male', 3)
 
 # Instantiate animals.  Insert them into the shelter's animals hash
 $shelter.animals['Spot'] = Animal.new('Spot', 3, 'male', 'Dog')

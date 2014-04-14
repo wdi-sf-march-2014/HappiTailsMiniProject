@@ -29,11 +29,12 @@ class Shelter
 	end
 
 	def adopt
-		animal += shelter
+		$shelter += client[animal]
 	end
 
 	# describe ".adopt" do
  #    it "takes an Animal object from a Client and adds it to the shelter" do
+
  #    end
   
 
