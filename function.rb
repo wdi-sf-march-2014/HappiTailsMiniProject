@@ -92,3 +92,37 @@ def create_client
 	user_answer = gets.chomp
 
 end
+
+def adopt_animal
+	puts "\nWe're delighted you are interested in adopting! \nHere is a list of the animals at our shelter: \n#{$shelter.display_animals}"
+	print "\nPlease tell us the name of the animal you wish to adopt: "
+	adopt_response = gets.chomp
+
+	puts "\nWhich client will be adopting? \n#{$shelter.display_clients}"
+	client_response = gets.chomp
+
+	$shelter.clients[client_response].pets[adopt_response] = $shelter.animals[adopt_response]
+	$shelter.animals.delete(adopt_response)
+
+	puts "#{client_response} is now the proud owner of #{adopt_response}."
+
+	print "\nPress enter to return to main menu... "
+	user_answer = gets.chomp
+end
+
+def return_animal
+	puts "\nWe are so sad you are returning! Please tell us the name of the animal you are returning: "
+	animal_return = gets.chomp
+
+	puts "Can you remind us of your name?"
+	client_return = gets.chomp
+
+	$shelter.animals[animal_return] = $shelter.clients[client_return].pets[animal_return]
+	$shelter.clients[client_return].pets.delete(animal_return)
+
+	puts "#{animal_return} has been returned to the shelter."
+
+	print "\nPress enter to return to main menu... "
+	user_answer = gets.chomp
+
+end
