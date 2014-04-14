@@ -1,3 +1,4 @@
+
 require_relative 'animal'
 require_relative 'client'
 
@@ -41,7 +42,7 @@ class Shelter
     $shelter.clients[client_to_adopt].pets[animal_to_adopt] = $shelter.animals[animal_to_adopt]
     $shelter.animals.delete(animal_to_adopt) 
     puts ""
-    puts "#{$shelter.clients[client_to_adopt].pets[animal_to_adopt].name} has successfully adopted #{$shelter.clients[client_to_adopt].name}.".bold.colorize( :red )
+    puts "#{$shelter.clients[client_to_adopt].pets[animal_to_adopt].name} has been successfully adopted by #{$shelter.clients[client_to_adopt].name}.".bold.colorize( :red )
   end
 
   def return(client_to_return, animal_to_return)
@@ -50,6 +51,8 @@ class Shelter
     puts ""
     puts "#{$shelter.clients[client_to_return].name} has just returned #{$shelter.animals[animal_to_return].name}.".bold.colorize( :red ) 
     puts "#{$shelter.animals[animal_to_return].name} will likely be put down now..."
+  end
+  
   def return(client_to_return, animal_to_return)
     kill()
   end
