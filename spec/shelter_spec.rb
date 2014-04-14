@@ -14,7 +14,7 @@ describe Shelter do
 
   describe ".to_s" do
     it "prints the Shelter object's attributes in a sentence" do
-      expect(@shelter.to_s).to match("HappiTails shelter at 10 East 21st Street has 0 animals and 0 people")
+      expect(@shelter.to_s).to match("HappiTails shelter at 10 East 21st Street has 0 animals and 0 people.")
     end
   end
 
@@ -27,7 +27,7 @@ describe Shelter do
     it "prints the Shelter object's Clients" do
       client = Client.new("Beth", 30, "female", 3)
       @shelter.clients[client.name] = client
-      expect(@shelter.display_clients).to match("Beth is a 30 year old female with 3 kids and 0 pets")
+      expect(@shelter.display_clients).to match("Beth is a 30 year old female with 3 kids and 0 pets.")
     end
   end
 

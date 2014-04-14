@@ -14,7 +14,7 @@ describe Client do
 
   describe ".to_s" do
     it "prints the Client object's attributes in a sentence" do
-      expect(@client.to_s).to eql("Beth is a 30 year old female with 3 kids and 0 pets")
+      expect(@client.to_s).to eql("Beth is a 30 year old female with 3 kids and 0 pets.")
     end
   end
 
@@ -24,7 +24,7 @@ describe Client do
       franz = Animal.new("Franz", 5, "male", "cat")
       @client.pets[tiny.name.to_sym] = tiny
       @client.pets[franz.name.to_sym] = franz
-      expect(@client.display_pets).to match("Tiny is a 3 year old male cat that loves \nFranz is a 5 year old male cat that loves ")
+      expect(@client.display_pets).to match("Tiny is a 3 year old male cat that loves .\nFranz is a 5 year old male cat that loves .")
     end
   end
 

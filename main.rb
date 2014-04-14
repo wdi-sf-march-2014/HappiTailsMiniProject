@@ -6,6 +6,7 @@ require_relative 'client'
 require_relative 'animal'
 
 puts "\n"
+puts "***** Welcome to the shelter managment system! *****"
 puts $shelter.to_s
 puts "\n"
 
@@ -27,13 +28,11 @@ while response != 'q'
 	when "da"
 		# display all the animal objects 
 		# in the shelter animals hash
-		puts "\n"
 		$shelter.display_animals
 
 	when "dc"
 		# display all the client objects 
 		# in the shelter clients hash
-		puts "\n"
 		$shelter.display_clients
 		
 	when "ca"
@@ -62,7 +61,6 @@ while response != 'q'
 
 end
 
-puts "\n"
 puts $shelter.to_s
 puts "\n"
 
