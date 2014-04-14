@@ -1,3 +1,10 @@
+# require 'hotel_party'
+# require 'hotel_lobby'
+# require 'freakin_weekend'
+
+require_relative 'animal'
+require_relative 'client'
+
 class Shelter
 
   attr_accessor :name, :address, :clients, :display_animals, :animals
@@ -7,28 +14,73 @@ class Shelter
     @address = address
     @clients = {}
     @animals = {}
-
   end
 
   def to_s
-    "#{name} shelter at #{address} has 0 animals and 0 people"  
+    "#{name} shelter at #{address} has #{animals.length} animals and #{clients.length} people"  
   end
 
   def display_clients
-    clients = ""
-    @clients.each do |key, value| 
-      clients += (value.to_s + "\n")
-    end
-    return clients.chomp()
+    # clients.each { |k, v| puts k}    #prints the name only
+    people = []
+    clients.each { |k, v| 
+      people << "#{v.name}: #{v.age} year old #{v.gender} with #{v.number_of_children} children and #{v.pets.length} pets: #{v.pets}".bold
+      }
+      people_str = people.join("\n")
+      puts people_str
   end
 
   def display_animals
-    animals.each_key { |k| puts k }
-    # "#{name} is a #{age} year old #{gender} #{species} that loves #{toys.join(", ")}"
+    # animals.each { |k, v| puts k}    #prints the name only
+    creatures = []
+    animals.each { |k, v| 
+      creatures << "#{v.name} the #{v.species}".bold
+      }
+      creatures_str = creatures.join("\n")
+      puts creatures_str
     return
   end
 
-  def adopt
+  def adopt(client_to_adopt, animal_to_adopt)
+    $shelter.clients[client_to_adopt].pets[animal_to_adopt] = $shelter.animals[animal_to_adopt]
+    $shelter.animals.delete(animal_to_adopt) 
+    puts ""
+    puts "#{$shelter.clients[client_to_adopt].pets[animal_to_adopt].name} has successfully adopted #{$shelter.clients[client_to_adopt].name}.".bold.colorize( :red )
   end
 
-end
+  def return(client_to_return, animal_to_return)
+    $shelter.animals[animal_to_return] = $shelter.clients[client_to_return].pets[animal_to_return]
+    $shelter.clients[client_to_return].pets.delete(animal_to_return)
+    puts ""
+    puts "#{$shelter.clients[client_to_return].name} has just returned #{$shelter.animals[animal_to_return].name}.".bold.colorize( :red ) 
+    puts "#{$shelter.animals[animal_to_return].name} will likely be put down now..."
+    death()
+  end
+
+  def kill(animal_to_kill)
+    $shelter.animals.delete(animal_to_kill) 
+    puts "#{$shelter.animals[animal_to_kill]} has been put down..."
+    puts 
+    puts "==================================="
+    puts "=============        =============="
+    puts "===========            ============"
+    puts "==========   x      x   ==========="
+    puts "==========              ==========="
+    puts "==========              ==========="
+    puts "==========              ==========="
+    puts "===========            ============"
+    puts "=====  =====          =====  ======"
+    puts "=======  ====  ||||  =====  ======="
+    puts "==========  ============  ========="
+    puts "=============  =======  ==========="
+    puts "================  ==  ============="
+    puts "==================  ==============="
+    puts "===============  =====  ==========="
+    puts "============  ==========  ========="
+    puts "=========  ===============  ======="
+    puts "======  =====================  ===="
+    puts "==================================="
+    puts "==================================="
+    puts "==================================="
+  end
+end   #class end

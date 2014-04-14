@@ -1,3 +1,5 @@
+require_relative 'animal'
+
 class Client 
   attr_accessor :name, :age, :gender, :number_of_children, :pets
 
@@ -10,7 +12,7 @@ class Client
   end
 
   def to_s
-    "#{@name} is a #{@age} year old #{@gender} with #{@number_of_children} kids and #{@pets.length} pets"
+    "#{@name} is a #{@age} year old #{@gender} with #{@number_of_children} kids and #{@pets.length} pets: #{pets}"
   end
 
   def display_pets
@@ -21,3 +23,4 @@ class Client
     return pets.chomp()
    end
 end
+
