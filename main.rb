@@ -35,9 +35,6 @@ while response != "Q"
 		  puts
 		  puts
 		  puts $shelter.to_s
-		# unit_num = gets.chomp
-		# new_apartment = Apartment.new(unit_num)
-		# new_building.apartments[unit_num] = new_apartment 
 		when "3" 
 		  puts "Please enter the name of the animal you would like to add to the shelter."
 		  animal_name = gets.chomp.capitalize
@@ -54,10 +51,6 @@ while response != "Q"
 		  $shelter.animal[:animal_name] = new_animal
 		  new_animal.to_s
 		  puts $shelter.display_animals
-		# new_tenant = Tenant.new(name)
-		# puts "which apartment does this tenant live in?"
-		# new_building.apartments.each do |unit, apartment|
-		# puts unit
 		when "4"
 		  puts "Please enter the first name of the new client you would like to add."
 		  client_name = gets.chomp.capitalize
