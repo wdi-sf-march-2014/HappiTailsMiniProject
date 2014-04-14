@@ -9,11 +9,13 @@ puts "Display animals (1)"
 puts "Display clients (2)"
 puts "Create animals (3)"
 puts "Create clients (4)"
-puts "Quit (5)"
+puts "Adopt an animal (5)"
+puts "Return an animal (6)"
+puts "Quit (7)"
 
 input = gets.chomp.to_s
 
-while input != "5"
+while input != "7"
 
 	case input
 		when "1"
@@ -38,6 +40,7 @@ while input != "5"
 			toys = gets.chomp
 			
 			#optional checkpoint: puts "Confirm: #{name} - #{age} - #{gender} - #{species}"
+			
 			$shelter.animals[name] = Animal.new(name, age, gender, species)
 		  puts "\n"
 
@@ -66,6 +69,38 @@ while input != "5"
 				puts "#{v}"
 			end
 
+		when "5"
+			#puts "Adopt an animal"
+			
+			#List the available animals
+			puts "\n"
+			$shelter.display_animals
+			
+			#Ask which one they would like to adopt
+			puts "\n"
+			puts "Which animal would you like to adopt?"
+			$shelter.animals.each do |k, v|
+				puts "#{k}"
+			end	
+			puts "\n"
+			name = gets.chomp
+			puts "\n"
+			puts "You would like to adopt #{name}"
+
+			#Move animal from $shelter.animals{} to client.pets{}
+
+
+
+
+
+
+
+
+
+		when "6"
+			puts "\n"
+			puts "Return an animal"
+
 	end
 
 puts "\n"
@@ -74,7 +109,9 @@ puts "Display animals (1)"
 puts "Display clients (2)"
 puts "Create animals (3)"
 puts "Create clients (4)"
-puts "Quit (5)"
+puts "Adopt an animal (5)"
+puts "Return an animal (6)"
+puts "Quit (7)"
 
 input = gets.chomp.to_s
 	

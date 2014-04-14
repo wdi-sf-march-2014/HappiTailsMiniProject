@@ -23,13 +23,3 @@ class Client
    return pet.chomp
   end
 end
-
-#Tiny is a 3 year old male cat that loves
-
-#{@building.address}
-#iterate through the hash and pull out the name
-#new_building.apartments.each do |unit, apt|
-
-# def to_s
-#     "This building has #{@apartments.count} apartments."
-#   end
