@@ -1,40 +1,39 @@
+require_relative 'client'
+
 class Shelter
+	attr_accessor :name, :address, :client, :animal
 
-	attr_accessor :client, :animal
-
-		def initialize(name, address)
-			@client = {}
-			@animal = {}
-			@name = name
-			@address = address
-		
-		end
-
-		def to_s
-			puts "#{@name} shelter at 10 East 21st Street has #{@animals.length} animals and #{client.length} people"
-		end
-
-		def display_clients
-			client = ""
-		 @client.each do |k, v|
-		 	client += v.to_s
-		 	return client
-		 	puts client
-		end
-
-		def display_animals
-			animal = ""
-		 @animal.each do |k, v|
-		 	animal += v.to_s + " "
-		 	return animal
-		 	puts animal
-		end
-		def adopt(pet_name, client_name)
-			pet_name = animal.fetch("name")
-			animal.delete("name")
-			@client[:name][:pets] = pet_name
-		end
+	def initialize(name,address)
+		@name = name
+		@address = address
+		@animal = {}
+		@client = {}
 	end
-end
+
+	def to_s
+		"#{@name} shelter at #{@address} has #{@animal.length} animals and #{@client.length} people"
+	end
+
+	def display_animals
+		animal_info = []
+		@animal.each { |key,val| animal_info.push(val.to_s) }
+		animal_info.join("\n")
+	end
+
+	def display_clients
+		client_info = []
+		@client.each { |key,val| client_info.push(val.to_s) }
+		client_info.join("\n")
+	end
+
+	def adopt(client_name, animal_name)
+		@client[client_name].pets[animal_name] = @animal[animal_name]
+		@animal.delete(animal_name)
+	end
+
+	def return(client_name, animal_name)
+		@animal[animal_name] = @client[client_name].pets[animal_name]
+		@client[client_name].pets.delete(animal_name)
+	end
 
 end

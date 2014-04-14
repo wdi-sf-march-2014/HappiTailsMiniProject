@@ -11,7 +11,7 @@ class Animal
   end
 
   def to_s
-    puts "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
+    "#{@name} is a #{@age} year old #{@gender} #{@species} that loves #{@toys.join(", ")}"
   end
 
 end
