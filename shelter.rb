@@ -31,4 +31,14 @@ class Shelter
     end
     return animal_info.chomp()
   end
+
+  def adopt_animal(adopting_client, adopted_animal)
+  	@clients[adopting_client].pets[adopted_animal] = @animals[adopted_animal]
+    @animals.delete(adopted_animal)
+  end
+
+  def return_animal(client_returning, pet_returning)
+  	@animals[pet_returning] = @clients[client_returning].pets[pet_returning] 
+    @clients[client_returning].pets.delete(pet_returning)
+  end
 end

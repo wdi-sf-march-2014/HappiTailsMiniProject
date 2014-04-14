@@ -40,7 +40,7 @@ while response != 'q' do
     client_gender = gets.chomp
     puts "How many kids does #{client_name} have?"
     client_num_kids = gets.chomp.to_i
-    $shelter.clients["#{client_name}"] = Client.new("#{client_name}", client_age, "#{client_gender}", client_num_kids)
+    $shelter.clients[client_name] = Client.new("#{client_name}", client_age, "#{client_gender}", client_num_kids)
 
   when "ca"
     puts "What is the new animal's name?"
@@ -51,7 +51,7 @@ while response != 'q' do
     animal_species = gets.chomp
     puts "Is #{animal_name} male or female?"
     animal_gender = gets.chomp
-    $shelter.animals["#{animal_name}"] = Animal.new("#{animal_name}", animal_age, "#{animal_gender}", "#{animal_species}")
+    $shelter.animals[animal_name] = Animal.new("#{animal_name}", animal_age, "#{animal_gender}", "#{animal_species}")
     puts "Does #{animal_name} have any toys?"
     puts "Enter \"yes\" or \"no\""
     has_toys = gets.chomp.downcase
@@ -60,7 +60,7 @@ while response != 'q' do
         puts "Enter the name of the toy, enter \"q\" to finish adding toys."
         puts "New toy:"
         toy = gets.chomp
-        $shelter.animals["#{animal_name}"].toys << "#{toy}"
+        $shelter.animals[animal_name].toys << "#{toy}"
         puts "Anymore toys to add?"
         has_toys = gets.chomp.downcase
       else
@@ -76,8 +76,7 @@ while response != 'q' do
     puts "Here are the current animals available for adoption:"
     $shelter.display_animals
     adopted_animal = gets.chomp
-    $shelter.clients["#{adopting_client}"].pets[adopted_animal] = $shelter.animals["#{adopted_animal}"]
-    $shelter.animals.delete("#{adopted_animal}")
+    $shelter.adopt_animal(adopting_client, adopted_animal)
     puts "#{adopted_animal} has been adopted by #{adopting_client}!"
   when "ra"
     puts "Who would like to return an anmimal?"
@@ -87,10 +86,9 @@ while response != 'q' do
     puts "What animal would #{client_returning} like to put in the shelter?"
     puts "#{client_returning} currently has the following animals:"
     puts "\n"
-    puts $shelter.clients["#{client_returning}"].pets.keys.join(", ")
+    puts $shelter.clients[client_returning].pets.keys.join(", ")
     pet_returning = gets.chomp
-    $shelter.animals["#{pet_returning}"] = $shelter.clients["#{client_returning}"].pets[pet_returning] 
-    $shelter.clients["#{client_returning}"].pets.delete("#{pet_returning}")
+    $shelter.return_animal(client_returning, pet_returning)
     puts "#{pet_returning} has been put back in the shelter by #{client_returning}."
   end
   puts "\n"
