@@ -29,10 +29,3 @@ class Shelter
 	end
 
 end
-
-
-# The shelter should display all the clients.
-# The shelter should display all the animals.
-# The shelter should display all the animals.
-# Ensure that new animals and clients can be added to the shelter
-# Make sure your specs for shelter pass before moving on
