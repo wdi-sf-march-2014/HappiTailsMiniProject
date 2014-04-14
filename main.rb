@@ -20,13 +20,11 @@ while response != 'Q'
 
   if response == "1"
   	display_animals
-
-
   elsif response == "2"
   	display_clients
   elsif response == "3"
   	create_animal
-  else response == "4"
+  elsif response == "4"
   	create_client
   end
 

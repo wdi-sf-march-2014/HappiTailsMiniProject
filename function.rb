@@ -31,10 +31,64 @@ def display_clients
 end
 
 def create_animal
+	puts "We are always looking for new animals! What's this animal's name?"
+	animal_name = gets.chomp
+
+	puts "How old is #{animal_name}?"
+	animal_age = gets.chomp.to_f
+
+	puts "Is #{animal_name} male or female?"
+	animal_gender = gets.chomp
+
+	puts "What kind of animal is #{animal_name}?"
+	animal_species = gets.chomp
+
+	puts "Finally, does #{animal_name} have any favorite toys?"
+	animal_toy = gets.chomp
+
+	animal_new = Animal.new(animal_name, animal_age, animal_gender, animal_species)
+	animal_new.toys.push(animal_toy)
+	$shelter.animals[animal_name] = animal_new
+
+	puts "We are excited to have #{animal_name} join the HappiTails Shelter! Our records reflect that #{animal_new.to_s}."
 
 
+
+	print "\nPress enter to return to main menu... "
+	user_answer = gets.chomp
 end
 
 def create_client
+	puts "We are always looking for new clients and homes for our animals! What is the client's name?"
+	client_name = gets.chomp
+
+	puts "How old is #{client_name}?"
+	client_age = gets.chomp.to_f
+
+	puts "What is #{client_name}'s gender?"
+	client_gender = gets.chomp
+
+	puts "Does #{client_name} have any kids living with them?"
+	client_kids = gets.chomp
+		if client_kids == "yes"
+			puts "How many kids are living with #{client_name}?"
+			client_kids = gets.chomp.to_f
+		else
+			client_kids = 0
+		end
+	puts "Finally, does #{client_name} have any pets we should know of?"
+	client_answer = gets.chomp
+		if client_answer == "yes"
+			puts "How many?"
+			client_pets = gets.chomp.to_f
+		end
+
+	client_new = Client.new(client_name, client_age, client_gender, client_kids)
+	$shelter.clients[client_name] = client_new
+
+	puts "We are delighted to meet #{client_name}! Our records reflect that #{client_new.to_s}."
+
+	print "\nPress enter to return to main menu... "
+	user_answer = gets.chomp
 
 end
