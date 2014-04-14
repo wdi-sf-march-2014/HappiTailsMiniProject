@@ -11,16 +11,12 @@ def menu
 puts " "
 puts "Please select an option:".bold.colorize( :blue )
 puts <<PARAGRAPH
-------------------------
-(a) Display all animals
-(b) Display all clients
-(c) Create an animal
-(d) Create a client 
-(e) Adopt an animal
-(f) Return an animal
-(g) Animal to put down
-(q) Abort mission
-------------------------
+------------------------------------------------------------------
+(a) Display all animals 		(e) Adopt an animal
+(b) Display all clients 		(f) Return an animal
+(c) Create an animal 			(g) Animal to put down
+(d) Create a client 			(q) Abort mission
+------------------------------------------------------------------
 PARAGRAPH
 end
 

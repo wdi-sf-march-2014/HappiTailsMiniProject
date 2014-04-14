@@ -1,7 +1,3 @@
-# require 'hotel_party'
-# require 'hotel_lobby'
-# require 'freakin_weekend'
-
 require_relative 'animal'
 require_relative 'client'
 
@@ -54,7 +50,8 @@ class Shelter
     puts ""
     puts "#{$shelter.clients[client_to_return].name} has just returned #{$shelter.animals[animal_to_return].name}.".bold.colorize( :red ) 
     puts "#{$shelter.animals[animal_to_return].name} will likely be put down now..."
-    death()
+  def return(client_to_return, animal_to_return)
+    kill()
   end
 
   def kill(animal_to_kill)
