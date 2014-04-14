@@ -30,7 +30,7 @@ while response != "Q"
 		  puts
 		  puts $shelter.to_s
 		when "2"
-	      puts "Here are our current clients:\n\n"
+	          puts "Here are our current clients:\n\n"
 		  puts $shelter.display_clients
 		  puts
 		  puts
@@ -48,7 +48,7 @@ while response != "Q"
 		  puts "Does this animal love any toys? If so enter the name of the toy below."
 		  new_animal.toys << gets.chomp
 		  puts "Thank you. The animal has now been added to the shelter database.\n\n"
-		  $shelter.animal[:animal_name] = new_animal
+		  $shelter.animal[animal_name] = new_animal
 		  new_animal.to_s
 		  puts $shelter.display_animals
 		when "4"
@@ -62,26 +62,26 @@ while response != "Q"
 		  client_num_children = gets.chomp.to_i
 		  new_client = Client.new(client_name, client_age, client_gender, client_num_children)
 		  puts "Thank you. Your new client has been added to the database.\n\n"
-	      $shelter.client[:client_name] = new_client
-	      new_client.to_s
-	      puts $shelter.display_clients
-	    when "5"
-	      puts "Good news! A pet is being adopted.\n"
-	      puts "Please enter the name of the client who is adopting an animal."
-	      client_name = gets.chomp.capitalize
-	      puts "Please enter the name of the pet that is being adopted."
-	      pet_name = gets.chomp.capitalize
-	      puts "Thank you, #{client_name} is now the proud owner of #{pet_name}."
-	      $shelter.adopt(client_name, pet_name)
-	      puts $shelter.to_s
-	    when "6"
-	      puts "We're sorry that an animal is being returned.\n"
-	      puts "Please enter the animal being returned."
-	      pet_name = gets.chomp.capitalize
-	      puts "Please enter the name of the client who is returning the animal." 
-	      client_name = gets.chomp.capitalize
-	      puts "Thank you, #{pet_name} has now been put back into the shelter database."
-	      $shelter.return(client_name, pet_name)
+	          $shelter.client[client_name] = new_client
+	          new_client.to_s
+	          puts $shelter.display_clients
+	        when "5"
+	          puts "Good news! A pet is being adopted.\n"
+	          puts "Please enter the name of the client who is adopting an animal."
+	          client_name = gets.chomp.capitalize
+	          puts "Please enter the name of the pet that is being adopted."
+	          pet_name = gets.chomp.capitalize
+	          puts "Thank you, #{client_name} is now the proud owner of #{pet_name}."
+	          $shelter.adopt(client_name, pet_name)
+	          puts $shelter.to_s
+	        when "6"
+	          puts "We're sorry that an animal is being returned.\n"
+	          puts "Please enter the animal being returned."
+	      	  pet_name = gets.chomp.capitalize
+		  puts "Please enter the name of the client who is returning the animal." 
+		  client_name = gets.chomp.capitalize
+		  puts "Thank you, #{pet_name} has now been put back into the shelter database."
+	          $shelter.return(client_name, pet_name)
 		when "Q"
 		  puts "Thank you for using the Happitails app."
 	end
