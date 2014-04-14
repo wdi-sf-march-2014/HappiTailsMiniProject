@@ -2,8 +2,6 @@
 #require 'rainbow'
 require_relative 'data'
 
-
-
 100.times{print "*"}
 puts "\n"
 puts "\n"
@@ -17,8 +15,10 @@ puts (menu_prompt).center(100)
 puts "\n"
 100.times{print "*"}
 puts "\n"
-menu = "\"da\" = display animals   \"dc\" = display clients   \"ca\" = create an animal   \"cc\" = create a client"
-puts (menu).center(100)
+menu1 = "\"da\" = display animals   \"dc\" = display clients   \"ca\" = create an animal   \"cc\" = create a client"
+puts (menu1).center(100)
+menu2 = "\"aa\" = adopt an amimal   \"ra\" = return an animal"
+puts (menu2).center(100)
 quit = "\"q\" = quit"
 puts (quit).center(100)
 puts "\n"
@@ -67,13 +67,40 @@ while response != 'q' do
         has_toys = "no"
       end
     end
+  when "aa"
+    puts "Who would like to adopt an animal? They must first be a client of the shelter."
+    puts "Here are the current clients:"
+    $shelter.display_clients
+    adopting_client = gets.chomp
+    puts "Which animal would #{adopting_client} like to take home?"
+    puts "Here are the current animals available for adoption:"
+    $shelter.display_animals
+    adopted_animal = gets.chomp
+    $shelter.clients["#{adopting_client}"].pets[adopted_animal] = $shelter.animals["#{adopted_animal}"]
+    $shelter.animals.delete("#{adopted_animal}")
+    puts "#{adopted_animal} has been adopted by #{adopting_client}!"
+  when "ra"
+    puts "Who would like to return an anmimal?"
+    $shelter.display_clients
+    client_returning = gets.chomp
+    puts "\n"
+    puts "What animal would #{client_returning} like to put in the shelter?"
+    puts "#{client_returning} currently has the following animals:"
+    puts "\n"
+    puts $shelter.clients["#{client_returning}"].pets.keys.join(", ")
+    pet_returning = gets.chomp
+    $shelter.animals["#{pet_returning}"] = $shelter.clients["#{client_returning}"].pets[pet_returning] 
+    $shelter.clients["#{client_returning}"].pets.delete("#{pet_returning}")
+    puts "#{pet_returning} has been put back in the shelter by #{client_returning}."
   end
   puts "\n"
   puts "\n"
   100.times{print "*"}
   puts "\n"
-  menu = "\"da\" = display animals   \"dc\" = display clients   \"ca\" = create an animal   \"cc\" = create a client"
-  puts (menu).center(100)
+  menu1 = "\"da\" = display animals   \"dc\" = display clients   \"ca\" = create an animal   \"cc\" = create a client"
+  puts (menu1).center(100)
+  menu2 = "\"aa\" = adopt an amimal   \"ra\" = return an animal"
+  puts (menu2).center(100)
   quit = "\"q\" = quit"
   puts (quit).center(100)
   puts "\n"
@@ -81,13 +108,3 @@ while response != 'q' do
   response = gets.chomp.downcase
 end
 
-
-=begin
-$shelter.clients['Sue'] = Client.new('Sue', 31, 'female', 2)
-client_name = gets.chomp
-client_age = gets.chomp.to_i
-client_gender = gets.chomp
-client_num_kids = gets.chomp.to_i
-
-$shelter.clients['client_name'] = Client.new('client_name', client_age, 'client_gender', client_num_kids)
-=end
