@@ -1,4 +1,4 @@
-require "pry"
+
 class Client
 	
 	attr_accessor :name, :age, :gender, :num_children, :num_pets, :pets
