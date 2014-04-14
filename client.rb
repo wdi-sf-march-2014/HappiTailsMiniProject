@@ -1,4 +1,5 @@
-class Client < Animal
+require "pry"
+class Client
 	
 	attr_accessor :name, :age, :gender, :num_children, :num_pets, :pets
 	
@@ -16,9 +17,7 @@ class Client < Animal
 	end
 
 	def display_pets
-		super(name, age, gender, species)
-		return "{@name} is a #{@age} year old #{@gender} #{@species} that loves\n #{@name} is a #{@age} year old #{@gender} #{@species} that loves "
+    	pets.values.join("\n")
 	end
 
 end
-
