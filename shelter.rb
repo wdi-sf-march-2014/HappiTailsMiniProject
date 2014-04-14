@@ -51,7 +51,7 @@ class Shelter
 		puts "Client created: #{client_name}, #{client_age}, #{client_gender}, #{client_children}" 
 	end
 		
-	end
+
 
 	def adopt
 		puts "Who would like to adopt a pet?"
