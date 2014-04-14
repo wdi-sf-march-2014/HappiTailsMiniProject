@@ -1,5 +1,6 @@
 require_relative 'animal'
 require_relative 'client'
+require_relative 'data'
 
 class Shelter
 	attr_accessor :name, :address, :animals, :clients
@@ -22,4 +23,12 @@ class Shelter
 		end
 		return client_info.chomp()
 	end
+
+	def display_animals
+    animal_info = ""
+    @animals.each do|k, v|
+    animal_info += (v.to_s + "\n")
+    end
+    return animal_info.chomp()
+  end
 end
