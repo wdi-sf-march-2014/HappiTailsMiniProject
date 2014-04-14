@@ -23,7 +23,7 @@ class Shelter
 		@clients.values.join("\n")
 	end
 	
-	def create_client
+	def create_animal
 		puts "Please enter name:"
 		animal_name = gets.chomp
 		puts "Please enter age:"
@@ -37,7 +37,7 @@ class Shelter
 		puts "Animal created: #{animal_name}, #{animal_age}, #{animal_gender}, #{animal_species}" 
 	end
 
-	def create_animal
+	def create_client
 			puts "Please enter name:"
 		client_name = gets.chomp
 		puts "Please enter age:"
