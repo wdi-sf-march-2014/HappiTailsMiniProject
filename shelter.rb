@@ -10,6 +10,9 @@ class Shelter
 		@clients = {}
 	end
 
+	
+
+
 	def to_s
 		"#{@shelter_name} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} people"
 	end

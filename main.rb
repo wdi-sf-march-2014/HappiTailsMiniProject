@@ -26,7 +26,7 @@ response = gets.chomp.upcase
 
 
 
-while response != "Q"
+until response == "Q"
 	case response
 
 	when "DA"
@@ -70,10 +70,12 @@ while response != "Q"
 	 client_name = gets.chomp.capitalize
 	 puts "Which animal are they adopting?"
 	 animal_name = gets.chomp.capitalize
-
-	 $shelter.adopt(client_name, animal_name)
-	 puts "Adoption Confirmed"
-
+	 if $shelter.animals.include? animal_name 
+	 	$shelter.adopt(client_name, animal_name)
+	 	puts "Adoption Confirmed"
+	 else
+	 	puts "#{animal_name} does not exist in our records."
+	 end
 	when "RP"
 	 puts "Which client is returning an animal?"
 	 client_name = gets.chomp.capitalize
