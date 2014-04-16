@@ -25,7 +25,7 @@ class Shelter
        #@num_clients
 	#end
        
-	def display_animal
+	def display_pets
 		#@animals.each_key do |animal|
 		animal = Clients.display_pets
 			puts animal
