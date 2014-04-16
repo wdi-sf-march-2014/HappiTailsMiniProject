@@ -14,13 +14,13 @@ class Client
        def to_s
        "#{@name} is a #{@age} year old #{@gender} with #{@number_of_childern} kids and #{@pets.length} pets"
        end
-       def display_pets
-        pets= ""
-		    @pets.each do |k, v|
-		 	  pets += (v.to_s + "\n")
-		     end
-		     return pets.chomp() 
-		    end
+      # def display_pets
+        # pets= ""
+		    # @pets.each do |k, v|
+		 	  #  pets += (v.to_s + "\n")
+		    #  end
+		    # return pets.chomp() 
+		   # end
 		     
 end
 

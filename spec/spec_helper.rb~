@@ -1,6 +1,6 @@
 # Coveralls
-# require 'coveralls'
-# Coveralls.wear!
+require 'coveralls'
+Coveralls.wear!
 
 # For our specs to run, we need to require the Ruby classes we’re testing
 require_relative '../animal'
