@@ -1,6 +1,5 @@
 module Names
 
-
 def Names.male_names
 
 male_names = 
