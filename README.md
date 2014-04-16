@@ -54,7 +54,8 @@ shelter by storing and manipulating information about clients and animals.
 	- A client should have a name.
 	- A client should have a number of children.
 	- A client should have an age.
-	- A client should have a number of pets.
+  - A client should have a gender
+	- A client should have pets.
 
 - Shelter:
 	- The shelter should display all the clients.
