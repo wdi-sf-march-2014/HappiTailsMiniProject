@@ -21,7 +21,7 @@ class Shelter
     # clients.each { |k, v| puts k}    #prints the name only
     people = []
     clients.each { |k, v| 
-      people << "#{v.name}: #{v.age} year old #{v.gender} with #{v.number_of_children} children and #{v.pets.length} pets: #{v.pets}".bold
+      people << "#{v.name}: #{v.age} year old #{v.gender} with #{v.number_of_children} children and #{v.pets.length} pets.".bold
       }
       people_str = people.join("\n")
       puts people_str
@@ -39,6 +39,7 @@ class Shelter
   end
 
   def adopt(client_to_adopt, animal_to_adopt)
+    puts $shelter.display_clients
     $shelter.clients[client_to_adopt].pets[animal_to_adopt] = $shelter.animals[animal_to_adopt]
     $shelter.animals.delete(animal_to_adopt) 
     puts ""
@@ -50,16 +51,12 @@ class Shelter
     $shelter.clients[client_to_return].pets.delete(animal_to_return)
     puts ""
     puts "#{$shelter.clients[client_to_return].name} has just returned #{$shelter.animals[animal_to_return].name}.".bold.colorize( :red ) 
-    puts "#{$shelter.animals[animal_to_return].name} will likely be put down now..."
-  end
-  
-  def return(client_to_return, animal_to_return)
-    kill()
+    puts "That animal will likely be put down now..."
   end
 
   def kill(animal_to_kill)
     $shelter.animals.delete(animal_to_kill) 
-    puts "#{$shelter.animals[animal_to_kill]} has been put down..."
+    puts "#{$shelter.animals[animal_to_kill]} has been put down."
     puts 
     puts "==================================="
     puts "=============        =============="

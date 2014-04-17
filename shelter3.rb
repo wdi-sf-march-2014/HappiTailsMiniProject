@@ -1,7 +1,3 @@
-# require 'hotel_party'
-# require 'hotel_lobby'
-# require 'freakin_weekend'
-
 require_relative 'animal'
 require_relative 'client'
 
@@ -22,13 +18,17 @@ class Shelter
   end
 
   def display_clients
+      summaries = @clients.map do |key, client|
+      client
+    end
+    summaries.join "\n"  end
     # clients.each { |k, v| puts k}    #prints the name only
-    people = []
-    clients.each { |k, v| 
-      people << "#{v.name}: #{v.age} year old #{v.gender} with #{v.number_of_children} children and #{v.pets.length} pets: #{v.pets}".bold
-      }
-      people_str = people.join("\n")
-      puts people_str
+    # people = []
+    # clients.each { |k, v| 
+    #   people << "#{v.name}: #{v.age} year old #{v.gender} with #{v.number_of_children} children and #{v.pets.length} pets.".bold
+    #   }
+    #   people_str = people.join("\n")
+    #   puts people_str
   end
 
   def display_animals

@@ -14,8 +14,8 @@ puts <<PARAGRAPH
 ------------------------------------------------------------------
 (a) Display all animals 		(e) Adopt an animal
 (b) Display all clients 		(f) Return an animal
-(c) Create an animal 			(g) Animal to put down
-(d) Create a client 			(q) Abort mission
+(c) Create an animal 			(g) Put animal down 
+(d) Create a client 			(q) Quit 
 ------------------------------------------------------------------
 PARAGRAPH
 end
@@ -35,7 +35,7 @@ while response != "q"
 		puts ""
 
 	when "c" || "C" 
-		puts "What type of animal would you like to give birth to?"
+		puts "What type of animal would you like to create?"
 		species = gets.chomp
 		puts "How old is this animal?"
 		age = gets.chomp.to_i
@@ -61,16 +61,15 @@ while response != "q"
 		$shelter.clients[name.to_sym] = client
 		puts "#{name} has been successfully added to the client list.".bold.colorize( :red )
 		puts ""
+		@clients[client.name] = client
 
 	when "e" || "E"
 		puts "What animal is up for adoption?"
 		puts "(#{$shelter.animals.keys.join(", ")})"
     animal_to_adopt = gets.chomp
-
     puts "What client is adopting this animal?"
     puts "(#{$shelter.clients.keys.join(", ")})"
     client_to_adopt = gets.chomp
-		
 		puts $shelter.adopt(client_to_adopt, animal_to_adopt)
 		puts ""
 
@@ -78,11 +77,9 @@ while response != "q"
 		puts "What client is returning an animal?"
     puts "(#{$shelter.clients.keys.join(", ")})"
     client_to_return = gets.chomp
-
     puts "What animal is being returned?"
 		puts "(#{$shelter.clients[client_to_return].pets.keys.join(", ")})"
     animal_to_return = gets.chomp
-	
 		$shelter.return(client_to_return,animal_to_return)
 
 	when "g" || "G"
