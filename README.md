@@ -11,6 +11,9 @@
   - gets.chomp
   - Multi-file projects ('require')
 
+- TO RUN
+  - Open directory in Terminal. Enter "ruby main.rb".
+
 ###Objectives:
 - Practice creating objects
 
